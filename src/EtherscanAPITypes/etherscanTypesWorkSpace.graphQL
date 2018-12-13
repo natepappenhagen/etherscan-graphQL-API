@@ -1,0 +1,766 @@
+
+
+
+#####################
+#
+#     accounts     #
+#
+#####################
+
+# WORKING
+
+# Result of `Get Ether Balance for a single Address`
+#https://api.etherscan.io/api?module=account&action=balance&address=0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a&tag=latest&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": "655442832174589898951364"
+}
+
+# WORKING
+
+# Result of `Get Ether Balance for multiple Addresses in a single call`
+# https://api.etherscan.io/api?module=account&action=balancemulti&address=0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a,0x63a9975ba31b0b9626b34300f7f627147df1f526,0x198ef1ec325a96cc354c7266a038be8b5c558f67&tag=latest&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": [
+{
+"account": "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a",
+"balance": "40807178566070000000000"
+},
+{
+"account": "0x63a9975ba31b0b9626b34300f7f627147df1f526",
+"balance": "332567136222827062478"
+},
+{
+"account": "0x198ef1ec325a96cc354c7266a038be8b5c558f67",
+"balance": "0"
+}
+]
+}
+# WORKING
+#Get a list of 'Normal' Transactions By Address
+#[Optional Parameters] startblock: starting blockNo to retrieve results, endblock: ending blockNo to retrieve results
+# http://api.etherscan.io/api?module=account&action=txlist&address=0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a&startblock=0&endblock=99999999&sort=asc&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": [
+{
+"blockNumber": "54092",
+"timeStamp": "1439048640",
+"hash": "0x9c81f44c29ff0226f835cd0a8a2f2a7eca6db52a711f8211b566fd15d3e0e8d4",
+"nonce": "0",
+"blockHash": "0xd3cabad6adab0b52eb632c386ea194036805713682c62cb589b5abcd76de2159",
+"transactionIndex": "0",
+"from": "0x5abfec25f74cd88437631a7731906932776356f9",
+"to": "",
+"value": "11901464239480000000000000",
+"gas": "2000000",
+"gasPrice": "10000000000000",
+"isError": "0",
+"txreceipt_status": "",
+"input": "0x6060604052600760018181557305096a47749d8bfab0a90c1bb7a95115dbe4cea6600355737c56d94ebeccb769524379c450873519a9d805ff600490815573cda0ad7542e30bf520652a05056ebe0105c7e49a60055573775e18be7a50a0abb8a4e82b1bd697d79f31fe0460065573063dd253c8da4ea9b12105781c9611b8297f5d1490925573036c8cecce8d8bbf0831d840d7f29c9e3ddefa63600855733fb1cd2cd96c6d5c0b5eb3322d807b34482481d4600955683635c9adc5dea0000091905b600781116100f457806101026000600283610100811015610002570154815260209190915260409020556001016100c2565b506000556101058190556201518042046101075550610f33806101186000396000f300606060405236156100b95760e060020a6000350463173825d9811461010b5780632f54bf6e1461015b5780634123cb6b146101835780635c52c2f51461018c5780637065cb48146101b2578063746c9171146101db578063797af627146101e4578063b20d30a9146101f7578063b61d27f614610220578063b75c7dc614610241578063ba51a6df14610270578063c2cf732614610299578063cbf0b0c0146102d7578063f00d4b5d14610300578063f1736d861461032e575b61033860003411156101095760408051600160a060020a033316815234602082015281517fe1fffcc4923d04b559f4d29a8bfc6cda04eb5b0d3c460751c2402c5c5cc9109c929181900390910190a15b565b6103386004356000600036604051808383808284375050509081018190039020905061063d815b600160a060020a03331660009081526101026020526040812054818082811415610bb357610d0b565b61033a6004355b600160a060020a03811660009081526101026020526040812054115b919050565b61033a60015481565b610338600036604051808383808284375050509081018190039020905061078e81610132565b61033860043560003660405180838380828437505050908101819003902090506105b581610132565b61033a60005481565b61033a6004355b6000816109f181610132565b610338600435600036604051808383808284375050509081018190039020905061078281610132565b61033a6004803590602480359160443591820191013560006107ad33610162565b610338600435600160a060020a0333166000908152610102602052604081205490808281141561034c576103cb565b61033860043560003660405180838380828437505050908101819003902090506106fc81610132565b61033a600435602435600082815261010360209081526040808320600160a060020a0385168452610102909252822054828181141561075557610779565b610338600435600036604051808383808284375050509081018190039020905061079c81610132565b6103386004356024356000600036604051808383808284375050509081018190039020905061045681610132565b61033a6101055481565b005b60408051918252519081900360200190f35b50506000828152610103602052604081206001810154600284900a9290831611156103cb5780546001828101805492909101835590839003905560408051600160a060020a03331681526020810186905281517fc7fb647e59b18047309aa15aad418e5d7ca96d173ad704f1031a2c3d7591734b929181900390910190a15b50505050565b600160a060020a03831660028361010081101561000257508301819055600160a060020a03851660008181526101026020908152604080832083905584835291829020869055815192835282019290925281517fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c929181900390910190a1505b505050565b156103cb5761046483610162565b1561046f5750610451565b600160a060020a0384166000908152610102602052604081205492508214156104985750610451565b6103d15b6101045460005b81811015610e5857610104805461010891600091849081101561000257600080516020610f1383398151915201548252506020918252604081208054600160a060020a0319168155600181018290556002810180548382559083528383209193610edd92601f92909201048101906109d9565b60018054810190819055600160a060020a038316906002906101008110156100025790900160005081905550600160005054610102600050600084600160a060020a03168152602001908152602001600020600050819055507f994a936646fe87ffe4f1e469d3d6aa417d6b855598397f323de5b449f765f0c3826040518082600160a060020a0316815260200191505060405180910390a15b505b50565b156105b0576105c382610162565b156105ce57506105b2565b6105d661049c565b60015460fa90106105eb576105e9610600565b505b60015460fa901061051657506105b2565b6106ba5b600060015b6001548110156109ed575b600154811080156106305750600281610100811015610002570154600014155b15610d1357600101610610565b1561045157600160a060020a03831660009081526101026020526040812054925082141561066b57506105b0565b600160016000505403600060005054111561068657506105b0565b600060028361010081101561000257508301819055600160a060020a038416815261010260205260408120556105fc61049c565b5060408051600160a060020a038516815290517f58619076adf5bb0943d100ef88d52d7c3fd691b19d3a9071b555b651fbf418da9181900360200190a1505050565b156105b05760015482111561071157506105b2565b600082905561071e61049c565b6040805183815290517facbdb084c721332ac59f9b8e392196c9eb0e4932862da8eb9beaf0dad4f550da9181900360200190a15050565b506001820154600282900a908116600014156107745760009350610779565b600193505b50505092915050565b156105b0575061010555565b156105b25760006101065550565b156105b05781600160a060020a0316ff5b156109c9576107c1846000610ded33610162565b1561087d577f92ca3a80853e6663fa31fa10b99225f18d4902939b4c53a9caae9043f6efd00433858786866040518086600160a060020a0316815260200185815260200184600160a060020a031681526020018060200182810382528484828181526020019250808284378201915050965050505050505060405180910390a184600160a060020a03168484846040518083838082843750505090810191506000908083038185876185025a03f150600093506109c992505050565b600036436040518084848082843750505090910190815260405190819003602001902091506108ad9050816101eb565b1580156108d0575060008181526101086020526040812054600160a060020a0316145b156109c95760008181526101086020908152604082208054600160a060020a03191688178155600181018790556002018054858255818452928290209092601f019190910481019084908682156109d1579182015b828111156109d1578235826000505591602001919060010190610925565b50507f1733cbb53659d713b79580f79f3f9ff215f78a7c7aa45890f3b89fc5cddfbf328133868887876040518087815260200186600160a060020a0316815260200185815260200184600160a060020a03168152602001806020018281038252848482818152602001925080828437820191505097505050505050505060405180910390a15b949350505050565b506109439291505b808211156109ed57600081556001016109d9565b5090565b15610ba05760008381526101086020526040812054600160a060020a031614610ba05760408051600091909120805460018201546002929092018054600160a060020a0392909216939091819083908015610a7157820191906000526020600020905b815481529060010190602001808311610a5457829003601f168201915b505091505060006040518083038185876185025a03f150505060008481526101086020908152604080519281902080546001820154600160a060020a033381811688529587018b905293860181905292166060850181905260a06080860181815260029390930180549187018290527fe7c957c06e9a662c1a6c77366179f5b702b97651dc28eee7d5bf1dff6e40bb4a975094958a959293909160c083019084908015610b4357820191906000526020600020905b815481529060010190602001808311610b2657829003601f168201915b5050965050505050505060405180910390a160008381526101086020908152604082208054600160a060020a031916815560018101839055600281018054848255908452828420919392610ba692601f92909201048101906109d9565b50919050565b505050600191505061017e565b60008581526101036020526040812080549093501415610c3b576000805483556001838101919091556101048054918201808255828015829011610c0a57818360005260206000209182019101610c0a91906109d9565b50505060028301819055610104805487929081101561000257600091909152600080516020610f1383398151915201555b506001810154600283900a90811660001415610d0b5760408051600160a060020a03331681526020810187905281517fe1c52dc63b719ade82e8bea94cc41a0d5d28e4aaf536adb5e9cccc9ff8c1aeda929181900390910190a1815460019011610cf8576000858152610103602052604090206002015461010480549091908110156100025760406000908120600080516020610f138339815191529290920181905580825560018281018290556002909201559450610d0b9050565b8154600019018255600182018054821790555b505050919050565b5b60018054118015610d3657506001546002906101008110156100025701546000145b15610d4a5760018054600019019055610d14565b60015481108015610d6d5750600154600290610100811015610002570154600014155b8015610d8757506002816101008110156100025701546000145b15610de857600154600290610100811015610002578101549082610100811015610002578101919091558190610102906000908361010081101561000257810154825260209290925260408120929092556001546101008110156100025701555b610605565b1561017e5761010754610e035b62015180420490565b1115610e1c57600061010655610e17610dfa565b610107555b6101065480830110801590610e3a5750610106546101055490830111155b15610e505750610106805482019055600161017e565b50600061017e565b6105b06101045460005b81811015610ee85761010480548290811015610002576000918252600080516020610f13833981519152015414610ed557610104805461010391600091849081101561000257600080516020610f1383398151915201548252506020919091526040812081815560018101829055600201555b600101610e62565b5050506001016104a3565b610104805460008083559190915261045190600080516020610f13833981519152908101906109d956004c0be60200faa20559308cb7b5a1bb3255c16cb1cab91f525b5ae7a03d02fabe",
+"contractAddress": "0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae",
+"cumulativeGasUsed": "1436963",
+"gasUsed": "1436963",
+"confirmations": "6790052"
+}
+]
+}
+
+# WORKING
+# Get a list of 'Internal' Transactions by Address
+# [Optional Parameters] startblock: starting blockNo to retrieve results, endblock: ending blockNo to retrieve results
+# http://api.etherscan.io/api?module=account&action=txlistinternal&address=0x2c1ba59d6f58433fb1eaee7d20b26ed83bda51a3&startblock=0&endblock=2702578&sort=asc&apikey=YourApiKeyToken
+
+{
+"status": "1",
+"message": "OK",
+"result": [
+{
+"blockNumber": "2535368",
+"timeStamp": "1477837690",
+"hash": "0x8a1a9989bda84f80143181a68bc137ecefa64d0d4ebde45dd94fc0cf49e70cb6",
+"from": "0x20d42f2e99a421147acf198d775395cac2e8b03d",
+"to": "",
+"value": "0",
+"contractAddress": "0x2c1ba59d6f58433fb1eaee7d20b26ed83bda51a3",
+"input": "",
+"type": "create",
+"gas": "254791",
+"gasUsed": "46750",
+"traceId": "0",
+"isError": "0",
+"errCode": ""
+},
+{
+"blockNumber": "2535479",
+"timeStamp": "1477839134",
+"hash": "0x1a50f1dc0bc912745f7d09b988669f71d199719e2fb7592c2074ede9578032d0",
+"from": "0x2c1ba59d6f58433fb1eaee7d20b26ed83bda51a3",
+"to": "0x20d42f2e99a421147acf198d775395cac2e8b03d",
+"value": "100000000000000000",
+"contractAddress": "",
+"input": "",
+"type": "call",
+"gas": "235231",
+"gasUsed": "0",
+"traceId": "0",
+"isError": "0",
+"errCode": ""
+}
+]
+}
+
+# WORKING
+# Get "Internal Transactions" by Transaction Hash
+# https://api.etherscan.io/api?module=account&action=txlistinternal&txhash=0x40eb908387324f2b575b4879cd9d7188f69c8fc9d87c901b9e2daaea4b442170&apikey=YourApiKeyToken
+
+{
+"status": "1",
+"message": "OK",
+"result": [
+{
+"blockNumber": "1743059",
+"timeStamp": "1466489498",
+"from": "0x2cac6e4b11d6b58f6d3c1c9d5fe8faa89f60e5a2",
+"to": "0x66a1c3eaf0f1ffc28d209c0763ed0ca614f3b002",
+"value": "7106740000000000",
+"contractAddress": "",
+"input": "",
+"type": "call",
+"gas": "2300",
+"gasUsed": "0",
+"isError": "0",
+"errCode": ""
+}
+]
+}
+
+# WORKING
+# Get a list of "ERC20 - Token Transfer Events" by Address
+# [Optional Parameters] startblock: starting blockNo to retrieve results, endblock: ending blockNo to retrieve results
+# http://api.etherscan.io/api?module=account&action=tokentx&address=0x4e83362442b8d1bec281594cea3050c8eb01311c&startblock=0&endblock=999999999&sort=asc&apikey=YourApiKeyToken
+
+{
+"status": "1",
+"message": "OK",
+"result": [
+{
+"blockNumber": "2228258",
+"timeStamp": "1473433992",
+"hash": "0x5f2cd76fd3656686e356bc02cc91d8d0726a16936fd08e67ed30467053225a86",
+"nonce": "10",
+"blockHash": "0x466dbced0a98e1b0490f787b51570850c8347960a4e92bd89acf85299e4cb9dc",
+"from": "0x4e83362442b8d1bec281594cea3050c8eb01311c",
+"contractAddress": "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7",
+"to": "0xac75b73394c329376c214663d92156afa864a77f",
+"value": "101000000000000000000",
+"tokenName": "\u0001",
+"tokenSymbol": "\u0001",
+"tokenDecimal": "1",
+"transactionIndex": "10",
+"gas": "1000000",
+"gasPrice": "20000000000",
+"gasUsed": "93657",
+"cumulativeGasUsed": "684715",
+"input": "0x2ac9bf090000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000005a34a38fc00a00000000000000000000000000000000000000000000000000005386e53c7de1e0000",
+"confirmations": "4615906"
+},
+{
+"blockNumber": "2228258",
+"timeStamp": "1473433992",
+"hash": "0x5f2cd76fd3656686e356bc02cc91d8d0726a16936fd08e67ed30467053225a86",
+"nonce": "10",
+"blockHash": "0x466dbced0a98e1b0490f787b51570850c8347960a4e92bd89acf85299e4cb9dc",
+"from": "0x4e83362442b8d1bec281594cea3050c8eb01311c",
+"contractAddress": "0xecf8f87f810ecf450940c9f60066b4a7a501d6a7",
+"to": "0xab8d8b74f202f4cd4a918b65da4bac612e086ee7",
+"value": "3000000000000000000",
+"tokenName": "\u0001",
+"tokenSymbol": "\u0001",
+"tokenDecimal": "1",
+"transactionIndex": "10",
+"gas": "1000000",
+"gasPrice": "20000000000",
+"gasUsed": "93657",
+"cumulativeGasUsed": "684715",
+"input": "0x2ac9bf090000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000005a34a38fc00a00000000000000000000000000000000000000000000000000005386e53c7de1e0000",
+"confirmations": "4615906"
+}
+]
+}
+
+# WORKS
+# Get list of Blocks Mined by Address
+# https://api.etherscan.io/api?module=account&action=getminedblocks&address=0x9dd134d14d1e65f84b706d6f205cd5b1cd03a46b&blocktype=blocks&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": [
+{
+"blockNumber": "3462296",
+"timeStamp": "1491118514",
+"blockReward": "5194770940000000000"
+},
+{
+"blockNumber": "2691400",
+"timeStamp": "1480072029",
+"blockReward": "5086562212310617100"
+},
+{
+"blockNumber": "2687700",
+"timeStamp": "1480018852",
+"blockReward": "5003251945421042780"
+}
+]
+}
+
+
+
+
+#####################
+#
+#     contracts     #
+#
+#####################
+# WORKS
+# Get Contract ABI for Verified Contract Source Codes
+# https://api.etherscan.io/api?module=contract&action=getabi&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": "[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"proposals\",\"outputs\":[{\"name\":\"recipient\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"votingDeadline\",\"type\":\"uint256\"},{\"name\":\"open\",\"type\":\"bool\"},{\"name\":\"proposalPassed\",\"type\":\"bool\"},{\"name\":\"proposalHash\",\"type\":\"bytes32\"},{\"name\":\"proposalDeposit\",\"type\":\"uint256\"},{\"name\":\"newCurator\",\"type\":\"bool\"},{\"name\":\"yea\",\"type\":\"uint256\"},{\"name\":\"nay\",\"type\":\"uint256\"},{\"name\":\"creator\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_spender\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minTokensToCreate\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"rewardAccount\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"daoCreator\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"divisor\",\"outputs\":[{\"name\":\"divisor\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"extraBalance\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"},{\"name\":\"_transactionData\",\"type\":\"bytes\"}],\"name\":\"executeProposal\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"unblockMe\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalRewardToken\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"actualBalance\",\"outputs\":[{\"name\":\"_actualBalance\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"closingTime\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"allowedRecipients\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferWithoutReward\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"refund\",\"outputs\":[],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_description\",\"type\":\"string\"},{\"name\":\"_transactionData\",\"type\":\"bytes\"},{\"name\":\"_debatingPeriod\",\"type\":\"uint256\"},{\"name\":\"_newCurator\",\"type\":\"bool\"}],\"name\":\"newProposal\",\"outputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"DAOpaidOut\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minQuorumDivisor\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newContract\",\"type\":\"address\"}],\"name\":\"newContract\",\"outputs\":[],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"balance\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\"},{\"name\":\"_allowed\",\"type\":\"bool\"}],\"name\":\"changeAllowedRecipients\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"halveMinQuorum\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"paidOut\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"},{\"name\":\"_newCurator\",\"type\":\"address\"}],\"name\":\"splitDAO\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"DAOrewardAccount\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"proposalDeposit\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"numberOfProposals\",\"outputs\":[{\"name\":\"_numberOfProposals\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"lastTimeMinQuorumMet\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_toMembers\",\"type\":\"bool\"}],\"name\":\"retrieveDAOReward\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"receiveEther\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isFueled\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_tokenHolder\",\"type\":\"address\"}],\"name\":\"createTokenProxy\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"}],\"name\":\"getNewDAOAddress\",\"outputs\":[{\"name\":\"_newDAO\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"},{\"name\":\"_supportsProposal\",\"type\":\"bool\"}],\"name\":\"vote\",\"outputs\":[{\"name\":\"_voteID\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"getMyReward\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"rewardToken\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFromWithoutReward\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"},{\"name\":\"_spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"name\":\"remaining\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_proposalDeposit\",\"type\":\"uint256\"}],\"name\":\"changeProposalDeposit\",\"outputs\":[],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"blocked\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"curator\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"},{\"name\":\"_recipient\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_transactionData\",\"type\":\"bytes\"}],\"name\":\"checkProposalCode\",\"outputs\":[{\"name\":\"_codeChecksOut\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"privateCreation\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"inputs\":[{\"name\":\"_curator\",\"type\":\"address\"},{\"name\":\"_daoCreator\",\"type\":\"address\"},{\"name\":\"_proposalDeposit\",\"type\":\"uint256\"},{\"name\":\"_minTokensToCreate\",\"type\":\"uint256\"},{\"name\":\"_closingTime\",\"type\":\"uint256\"},{\"name\":\"_privateCreation\",\"type\":\"address\"}],\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_spender\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"FuelingToDate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"CreatedToken\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Refund\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"proposalID\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"newCurator\",\"type\":\"bool\"},{\"indexed\":false,\"name\":\"description\",\"type\":\"string\"}],\"name\":\"ProposalAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"proposalID\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"position\",\"type\":\"bool\"},{\"indexed\":true,\"name\":\"voter\",\"type\":\"address\"}],\"name\":\"Voted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"proposalID\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"result\",\"type\":\"bool\"},{\"indexed\":false,\"name\":\"quorum\",\"type\":\"uint256\"}],\"name\":\"ProposalTallied\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_newCurator\",\"type\":\"address\"}],\"name\":\"NewCurator\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_recipient\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_allowed\",\"type\":\"bool\"}],\"name\":\"AllowedRecipientChanged\",\"type\":\"event\"}]"
+}
+
+# WORKS
+# Get Contract Source Code for Verified Contract Source Codes
+# https://api.etherscan.io/api?module=contract&action=getsourcecode&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": [
+{
+"SourceCode": "/*\n\n- Bytecode Verification performed was compared on second iteration -\n\nThis file is part of the DAO.\n\nThe DAO is free software: you can redistribute it and/or modify\nit under the terms of the GNU lesser General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThe DAO is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU lesser General Public License for more details.\n\nYou should have received a copy of the GNU lesser General Public License\nalong with the DAO.  If not, see <http://www.gnu.org/licenses/>.\n*/\n\n\n/*\nBasic, standardized Token contract with no \"premine\". Defines the functions to\ncheck token balances, send tokens, send tokens on behalf of a 3rd party and the\ncorresponding approval process. Tokens need to be created by a derived\ncontract (e.g. TokenCreation.sol).\n\nThank you ConsenSys, this contract originated from:\nhttps://github.com/ConsenSys/Tokens/blob/master/Token_Contracts/contracts/Standard_Token.sol\nWhich is itself based on the Ethereum standardized contract APIs:\nhttps://github.com/ethereum/wiki/wiki/Standardized_Contract_APIs\n*/\n\n/// @title Standard Token Contract.\n\ncontract TokenInterface {\n    mapping (address => uint256) balances;\n    mapping (address => mapping (address => uint256)) allowed;\n\n    /// Total amount of tokens\n    uint256 public totalSupply;\n\n    /// @param _owner The address from which the balance will be retrieved\n    /// @return The balance\n    function balanceOf(address _owner) constant returns (uint256 balance);\n\n    /// @notice Send `_amount` tokens to `_to` from `msg.sender`\n    /// @param _to The address of the recipient\n    /// @param _amount The amount of tokens to be transferred\n    /// @return Whether the transfer was successful or not\n    function transfer(address _to, uint256 _amount) returns (bool success);\n\n    /// @notice Send `_amount` tokens to `_to` from `_from` on the condition it\n    /// is approved by `_from`\n    /// @param _from The address of the origin of the transfer\n    /// @param _to The address of the recipient\n    /// @param _amount The amount of tokens to be transferred\n    /// @return Whether the transfer was successful or not\n    function transferFrom(address _from, address _to, uint256 _amount) returns (bool success);\n\n    /// @notice `msg.sender` approves `_spender` to spend `_amount` tokens on\n    /// its behalf\n    /// @param _spender The address of the account able to transfer the tokens\n    /// @param _amount The amount of tokens to be approved for transfer\n    /// @return Whether the approval was successful or not\n    function approve(address _spender, uint256 _amount) returns (bool success);\n\n    /// @param _owner The address of the account owning tokens\n    /// @param _spender The address of the account able to transfer the tokens\n    /// @return Amount of remaining tokens of _owner that _spender is allowed\n    /// to spend\n    function allowance(\n        address _owner,\n        address _spender\n    ) constant returns (uint256 remaining);\n\n    event Transfer(address indexed _from, address indexed _to, uint256 _amount);\n    event Approval(\n        address indexed _owner,\n        address indexed _spender,\n        uint256 _amount\n    );\n}\n\n\ncontract Token is TokenInterface {\n    // Protects users by preventing the execution of method calls that\n    // inadvertently also transferred ether\n    modifier noEther() {if (msg.value > 0) throw; _}\n\n    function balanceOf(address _owner) constant returns (uint256 balance) {\n        return balances[_owner];\n    }\n\n    function transfer(address _to, uint256 _amount) noEther returns (bool success) {\n        if (balances[msg.sender] >= _amount && _amount > 0) {\n            balances[msg.sender] -= _amount;\n            balances[_to] += _amount;\n            Transfer(msg.sender, _to, _amount);\n            return true;\n        } else {\n           return false;\n        }\n    }\n\n    function transferFrom(\n        address _from,\n        address _to,\n        uint256 _amount\n    ) noEther returns (bool success) {\n\n        if (balances[_from] >= _amount\n            && allowed[_from][msg.sender] >= _amount\n            && _amount > 0) {\n\n            balances[_to] += _amount;\n            balances[_from] -= _amount;\n            allowed[_from][msg.sender] -= _amount;\n            Transfer(_from, _to, _amount);\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n    function approve(address _spender, uint256 _amount) returns (bool success) {\n        allowed[msg.sender][_spender] = _amount;\n        Approval(msg.sender, _spender, _amount);\n        return true;\n    }\n\n    function allowance(address _owner, address _spender) constant returns (uint256 remaining) {\n        return allowed[_owner][_spender];\n    }\n}\n\n\n/*\nThis file is part of the DAO.\n\nThe DAO is free software: you can redistribute it and/or modify\nit under the terms of the GNU lesser General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThe DAO is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU lesser General Public License for more details.\n\nYou should have received a copy of the GNU lesser General Public License\nalong with the DAO.  If not, see <http://www.gnu.org/licenses/>.\n*/\n\n\n/*\nBasic account, used by the DAO contract to separately manage both the rewards \nand the extraBalance accounts. \n*/\n\ncontract ManagedAccountInterface {\n    // The only address with permission to withdraw from this account\n    address public owner;\n    // If true, only the owner of the account can receive ether from it\n    bool public payOwnerOnly;\n    // The sum of ether (in wei) which has been sent to this contract\n    uint public accumulatedInput;\n\n    /// @notice Sends `_amount` of wei to _recipient\n    /// @param _amount The amount of wei to send to `_recipient`\n    /// @param _recipient The address to receive `_amount` of wei\n    /// @return True if the send completed\n    function payOut(address _recipient, uint _amount) returns (bool);\n\n    event PayOut(address indexed _recipient, uint _amount);\n}\n\n\ncontract ManagedAccount is ManagedAccountInterface{\n\n    // The constructor sets the owner of the account\n    function ManagedAccount(address _owner, bool _payOwnerOnly) {\n        owner = _owner;\n        payOwnerOnly = _payOwnerOnly;\n    }\n\n    // When the contract receives a transaction without data this is called. \n    // It counts the amount of ether it receives and stores it in \n    // accumulatedInput.\n    function() {\n        accumulatedInput += msg.value;\n    }\n\n    function payOut(address _recipient, uint _amount) returns (bool) {\n        if (msg.sender != owner || msg.value > 0 || (payOwnerOnly && _recipient != owner))\n            throw;\n        if (_recipient.call.value(_amount)()) {\n            PayOut(_recipient, _amount);\n            return true;\n        } else {\n            return false;\n        }\n    }\n}\n/*\nThis file is part of the DAO.\n\nThe DAO is free software: you can redistribute it and/or modify\nit under the terms of the GNU lesser General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThe DAO is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU lesser General Public License for more details.\n\nYou should have received a copy of the GNU lesser General Public License\nalong with the DAO.  If not, see <http://www.gnu.org/licenses/>.\n*/\n\n\n/*\n * Token Creation contract, used by the DAO to create its tokens and initialize\n * its ether. Feel free to modify the divisor method to implement different\n * Token Creation parameters\n*/\n\n\ncontract TokenCreationInterface {\n\n    // End of token creation, in Unix time\n    uint public closingTime;\n    // Minimum fueling goal of the token creation, denominated in tokens to\n    // be created\n    uint public minTokensToCreate;\n    // True if the DAO reached its minimum fueling goal, false otherwise\n    bool public isFueled;\n    // For DAO splits - if privateCreation is 0, then it is a public token\n    // creation, otherwise only the address stored in privateCreation is\n    // allowed to create tokens\n    address public privateCreation;\n    // hold extra ether which has been sent after the DAO token\n    // creation rate has increased\n    ManagedAccount public extraBalance;\n    // tracks the amount of wei given from each contributor (used for refund)\n    mapping (address => uint256) weiGiven;\n\n    /// @dev Constructor setting the minimum fueling goal and the\n    /// end of the Token Creation\n    /// @param _minTokensToCreate Minimum fueling goal in number of\n    ///        Tokens to be created\n    /// @param _closingTime Date (in Unix time) of the end of the Token Creation\n    /// @param _privateCreation Zero means that the creation is public.  A\n    /// non-zero address represents the only address that can create Tokens\n    /// (the address can also create Tokens on behalf of other accounts)\n    // This is the constructor: it can not be overloaded so it is commented out\n    //  function TokenCreation(\n        //  uint _minTokensTocreate,\n        //  uint _closingTime,\n        //  address _privateCreation\n    //  );\n\n    /// @notice Create Token with `_tokenHolder` as the initial owner of the Token\n    /// @param _tokenHolder The address of the Tokens's recipient\n    /// @return Whether the token creation was successful\n    function createTokenProxy(address _tokenHolder) returns (bool success);\n\n    /// @notice Refund `msg.sender` in the case the Token Creation did\n    /// not reach its minimum fueling goal\n    function refund();\n\n    /// @return The divisor used to calculate the token creation rate during\n    /// the creation phase\n    function divisor() constant returns (uint divisor);\n\n    event FuelingToDate(uint value);\n    event CreatedToken(address indexed to, uint amount);\n    event Refund(address indexed to, uint value);\n}\n\n\ncontract TokenCreation is TokenCreationInterface, Token {\n    function TokenCreation(\n        uint _minTokensToCreate,\n        uint _closingTime,\n        address _privateCreation) {\n\n        closingTime = _closingTime;\n        minTokensToCreate = _minTokensToCreate;\n        privateCreation = _privateCreation;\n        extraBalance = new ManagedAccount(address(this), true);\n    }\n\n    function createTokenProxy(address _tokenHolder) returns (bool success) {\n        if (now < closingTime && msg.value > 0\n            && (privateCreation == 0 || privateCreation == msg.sender)) {\n\n            uint token = (msg.value * 20) / divisor();\n            extraBalance.call.value(msg.value - token)();\n            balances[_tokenHolder] += token;\n            totalSupply += token;\n            weiGiven[_tokenHolder] += msg.value;\n            CreatedToken(_tokenHolder, token);\n            if (totalSupply >= minTokensToCreate && !isFueled) {\n                isFueled = true;\n                FuelingToDate(totalSupply);\n            }\n            return true;\n        }\n        throw;\n    }\n\n    function refund() noEther {\n        if (now > closingTime && !isFueled) {\n            // Get extraBalance - will only succeed when called for the first time\n            if (extraBalance.balance >= extraBalance.accumulatedInput())\n                extraBalance.payOut(address(this), extraBalance.accumulatedInput());\n\n            // Execute refund\n            if (msg.sender.call.value(weiGiven[msg.sender])()) {\n                Refund(msg.sender, weiGiven[msg.sender]);\n                totalSupply -= balances[msg.sender];\n                balances[msg.sender] = 0;\n                weiGiven[msg.sender] = 0;\n            }\n        }\n    }\n\n    function divisor() constant returns (uint divisor) {\n        // The number of (base unit) tokens per wei is calculated\n        // as `msg.value` * 20 / `divisor`\n        // The fueling period starts with a 1:1 ratio\n        if (closingTime - 2 weeks > now) {\n            return 20;\n        // Followed by 10 days with a daily creation rate increase of 5%\n        } else if (closingTime - 4 days > now) {\n            return (20 + (now - (closingTime - 2 weeks)) / (1 days));\n        // The last 4 days there is a constant creation rate ratio of 1:1.5\n        } else {\n            return 30;\n        }\n    }\n}\n/*\nThis file is part of the DAO.\n\nThe DAO is free software: you can redistribute it and/or modify\nit under the terms of the GNU lesser General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThe DAO is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU lesser General Public License for more details.\n\nYou should have received a copy of the GNU lesser General Public License\nalong with the DAO.  If not, see <http://www.gnu.org/licenses/>.\n*/\n\n\n/*\nStandard smart contract for a Decentralized Autonomous Organization (DAO)\nto automate organizational governance and decision-making.\n*/\n\n\ncontract DAOInterface {\n\n    // The amount of days for which people who try to participate in the\n    // creation by calling the fallback function will still get their ether back\n    uint constant creationGracePeriod = 40 days;\n    // The minimum debate period that a generic proposal can have\n    uint constant minProposalDebatePeriod = 2 weeks;\n    // The minimum debate period that a split proposal can have\n    uint constant minSplitDebatePeriod = 1 weeks;\n    // Period of days inside which it's possible to execute a DAO split\n    uint constant splitExecutionPeriod = 27 days;\n    // Period of time after which the minimum Quorum is halved\n    uint constant quorumHalvingPeriod = 25 weeks;\n    // Period after which a proposal is closed\n    // (used in the case `executeProposal` fails because it throws)\n    uint constant executeProposalPeriod = 10 days;\n    // Denotes the maximum proposal deposit that can be given. It is given as\n    // a fraction of total Ether spent plus balance of the DAO\n    uint constant maxDepositDivisor = 100;\n\n    // Proposals to spend the DAO's ether or to choose a new Curator\n    Proposal[] public proposals;\n    // The quorum needed for each proposal is partially calculated by\n    // totalSupply / minQuorumDivisor\n    uint public minQuorumDivisor;\n    // The unix time of the last time quorum was reached on a proposal\n    uint  public lastTimeMinQuorumMet;\n\n    // Address of the curator\n    address public curator;\n    // The whitelist: List of addresses the DAO is allowed to send ether to\n    mapping (address => bool) public allowedRecipients;\n\n    // Tracks the addresses that own Reward Tokens. Those addresses can only be\n    // DAOs that have split from the original DAO. Conceptually, Reward Tokens\n    // represent the proportion of the rewards that the DAO has the right to\n    // receive. These Reward Tokens are generated when the DAO spends ether.\n    mapping (address => uint) public rewardToken;\n    // Total supply of rewardToken\n    uint public totalRewardToken;\n\n    // The account used to manage the rewards which are to be distributed to the\n    // DAO Token Holders of this DAO\n    ManagedAccount public rewardAccount;\n\n    // The account used to manage the rewards which are to be distributed to\n    // any DAO that holds Reward Tokens\n    ManagedAccount public DAOrewardAccount;\n\n    // Amount of rewards (in wei) already paid out to a certain DAO\n    mapping (address => uint) public DAOpaidOut;\n\n    // Amount of rewards (in wei) already paid out to a certain address\n    mapping (address => uint) public paidOut;\n    // Map of addresses blocked during a vote (not allowed to transfer DAO\n    // tokens). The address points to the proposal ID.\n    mapping (address => uint) public blocked;\n\n    // The minimum deposit (in wei) required to submit any proposal that is not\n    // requesting a new Curator (no deposit is required for splits)\n    uint public proposalDeposit;\n\n    // the accumulated sum of all current proposal deposits\n    uint sumOfProposalDeposits;\n\n    // Contract that is able to create a new DAO (with the same code as\n    // this one), used for splits\n    DAO_Creator public daoCreator;\n\n    // A proposal with `newCurator == false` represents a transaction\n    // to be issued by this DAO\n    // A proposal with `newCurator == true` represents a DAO split\n    struct Proposal {\n        // The address where the `amount` will go to if the proposal is accepted\n        // or if `newCurator` is true, the proposed Curator of\n        // the new DAO).\n        address recipient;\n        // The amount to transfer to `recipient` if the proposal is accepted.\n        uint amount;\n        // A plain text description of the proposal\n        string description;\n        // A unix timestamp, denoting the end of the voting period\n        uint votingDeadline;\n        // True if the proposal's votes have yet to be counted, otherwise False\n        bool open;\n        // True if quorum has been reached, the votes have been counted, and\n        // the majority said yes\n        bool proposalPassed;\n        // A hash to check validity of a proposal\n        bytes32 proposalHash;\n        // Deposit in wei the creator added when submitting their proposal. It\n        // is taken from the msg.value of a newProposal call.\n        uint proposalDeposit;\n        // True if this proposal is to assign a new Curator\n        bool newCurator;\n        // Data needed for splitting the DAO\n        SplitData[] splitData;\n        // Number of Tokens in favor of the proposal\n        uint yea;\n        // Number of Tokens opposed to the proposal\n        uint nay;\n        // Simple mapping to check if a shareholder has voted for it\n        mapping (address => bool) votedYes;\n        // Simple mapping to check if a shareholder has voted against it\n        mapping (address => bool) votedNo;\n        // Address of the shareholder who created the proposal\n        address creator;\n    }\n\n    // Used only in the case of a newCurator proposal.\n    struct SplitData {\n        // The balance of the current DAO minus the deposit at the time of split\n        uint splitBalance;\n        // The total amount of DAO Tokens in existence at the time of split.\n        uint totalSupply;\n        // Amount of Reward Tokens owned by the DAO at the time of split.\n        uint rewardToken;\n        // The new DAO contract created at the time of split.\n        DAO newDAO;\n    }\n\n    // Used to restrict access to certain functions to only DAO Token Holders\n    modifier onlyTokenholders {}\n\n    /// @dev Constructor setting the Curator and the address\n    /// for the contract able to create another DAO as well as the parameters\n    /// for the DAO Token Creation\n    /// @param _curator The Curator\n    /// @param _daoCreator The contract able to (re)create this DAO\n    /// @param _proposalDeposit The deposit to be paid for a regular proposal\n    /// @param _minTokensToCreate Minimum required wei-equivalent tokens\n    ///        to be created for a successful DAO Token Creation\n    /// @param _closingTime Date (in Unix time) of the end of the DAO Token Creation\n    /// @param _privateCreation If zero the DAO Token Creation is open to public, a\n    /// non-zero address means that the DAO Token Creation is only for the address\n    // This is the constructor: it can not be overloaded so it is commented out\n    //  function DAO(\n        //  address _curator,\n        //  DAO_Creator _daoCreator,\n        //  uint _proposalDeposit,\n        //  uint _minTokensToCreate,\n        //  uint _closingTime,\n        //  address _privateCreation\n    //  );\n\n    /// @notice Create Token with `msg.sender` as the beneficiary\n    /// @return Whether the token creation was successful\n    function () returns (bool success);\n\n\n    /// @dev This function is used to send ether back\n    /// to the DAO, it can also be used to receive payments that should not be\n    /// counted as rewards (donations, grants, etc.)\n    /// @return Whether the DAO received the ether successfully\n    function receiveEther() returns(bool);\n\n    /// @notice `msg.sender` creates a proposal to send `_amount` Wei to\n    /// `_recipient` with the transaction data `_transactionData`. If\n    /// `_newCurator` is true, then this is a proposal that splits the\n    /// DAO and sets `_recipient` as the new DAO's Curator.\n    /// @param _recipient Address of the recipient of the proposed transaction\n    /// @param _amount Amount of wei to be sent with the proposed transaction\n    /// @param _description String describing the proposal\n    /// @param _transactionData Data of the proposed transaction\n    /// @param _debatingPeriod Time used for debating a proposal, at least 2\n    /// weeks for a regular proposal, 10 days for new Curator proposal\n    /// @param _newCurator Bool defining whether this proposal is about\n    /// a new Curator or not\n    /// @return The proposal ID. Needed for voting on the proposal\n    function newProposal(\n        address _recipient,\n        uint _amount,\n        string _description,\n        bytes _transactionData,\n        uint _debatingPeriod,\n        bool _newCurator\n    ) onlyTokenholders returns (uint _proposalID);\n\n    /// @notice Check that the proposal with the ID `_proposalID` matches the\n    /// transaction which sends `_amount` with data `_transactionData`\n    /// to `_recipient`\n    /// @param _proposalID The proposal ID\n    /// @param _recipient The recipient of the proposed transaction\n    /// @param _amount The amount of wei to be sent in the proposed transaction\n    /// @param _transactionData The data of the proposed transaction\n    /// @return Whether the proposal ID matches the transaction data or not\n    function checkProposalCode(\n        uint _proposalID,\n        address _recipient,\n        uint _amount,\n        bytes _transactionData\n    ) constant returns (bool _codeChecksOut);\n\n    /// @notice Vote on proposal `_proposalID` with `_supportsProposal`\n    /// @param _proposalID The proposal ID\n    /// @param _supportsProposal Yes/No - support of the proposal\n    /// @return The vote ID.\n    function vote(\n        uint _proposalID,\n        bool _supportsProposal\n    ) onlyTokenholders returns (uint _voteID);\n\n    /// @notice Checks whether proposal `_proposalID` with transaction data\n    /// `_transactionData` has been voted for or rejected, and executes the\n    /// transaction in the case it has been voted for.\n    /// @param _proposalID The proposal ID\n    /// @param _transactionData The data of the proposed transaction\n    /// @return Whether the proposed transaction has been executed or not\n    function executeProposal(\n        uint _proposalID,\n        bytes _transactionData\n    ) returns (bool _success);\n\n    /// @notice ATTENTION! I confirm to move my remaining ether to a new DAO\n    /// with `_newCurator` as the new Curator, as has been\n    /// proposed in proposal `_proposalID`. This will burn my tokens. This can\n    /// not be undone and will split the DAO into two DAO's, with two\n    /// different underlying tokens.\n    /// @param _proposalID The proposal ID\n    /// @param _newCurator The new Curator of the new DAO\n    /// @dev This function, when called for the first time for this proposal,\n    /// will create a new DAO and send the sender's portion of the remaining\n    /// ether and Reward Tokens to the new DAO. It will also burn the DAO Tokens\n    /// of the sender.\n    function splitDAO(\n        uint _proposalID,\n        address _newCurator\n    ) returns (bool _success);\n\n    /// @dev can only be called by the DAO itself through a proposal\n    /// updates the contract of the DAO by sending all ether and rewardTokens\n    /// to the new DAO. The new DAO needs to be approved by the Curator\n    /// @param _newContract the address of the new contract\n    function newContract(address _newContract);\n\n\n    /// @notice Add a new possible recipient `_recipient` to the whitelist so\n    /// that the DAO can send transactions to them (using proposals)\n    /// @param _recipient New recipient address\n    /// @dev Can only be called by the current Curator\n    /// @return Whether successful or not\n    function changeAllowedRecipients(address _recipient, bool _allowed) external returns (bool _success);\n\n\n    /// @notice Change the minimum deposit required to submit a proposal\n    /// @param _proposalDeposit The new proposal deposit\n    /// @dev Can only be called by this DAO (through proposals with the\n    /// recipient being this DAO itself)\n    function changeProposalDeposit(uint _proposalDeposit) external;\n\n    /// @notice Move rewards from the DAORewards managed account\n    /// @param _toMembers If true rewards are moved to the actual reward account\n    ///                   for the DAO. If not then it's moved to the DAO itself\n    /// @return Whether the call was successful\n    function retrieveDAOReward(bool _toMembers) external returns (bool _success);\n\n    /// @notice Get my portion of the reward that was sent to `rewardAccount`\n    /// @return Whether the call was successful\n    function getMyReward() returns(bool _success);\n\n    /// @notice Withdraw `_account`'s portion of the reward from `rewardAccount`\n    /// to `_account`'s balance\n    /// @return Whether the call was successful\n    function withdrawRewardFor(address _account) internal returns (bool _success);\n\n    /// @notice Send `_amount` tokens to `_to` from `msg.sender`. Prior to this\n    /// getMyReward() is called.\n    /// @param _to The address of the recipient\n    /// @param _amount The amount of tokens to be transfered\n    /// @return Whether the transfer was successful or not\n    function transferWithoutReward(address _to, uint256 _amount) returns (bool success);\n\n    /// @notice Send `_amount` tokens to `_to` from `_from` on the condition it\n    /// is approved by `_from`. Prior to this getMyReward() is called.\n    /// @param _from The address of the sender\n    /// @param _to The address of the recipient\n    /// @param _amount The amount of tokens to be transfered\n    /// @return Whether the transfer was successful or not\n    function transferFromWithoutReward(\n        address _from,\n        address _to,\n        uint256 _amount\n    ) returns (bool success);\n\n    /// @notice Doubles the 'minQuorumDivisor' in the case quorum has not been\n    /// achieved in 52 weeks\n    /// @return Whether the change was successful or not\n    function halveMinQuorum() returns (bool _success);\n\n    /// @return total number of proposals ever created\n    function numberOfProposals() constant returns (uint _numberOfProposals);\n\n    /// @param _proposalID Id of the new curator proposal\n    /// @return Address of the new DAO\n    function getNewDAOAddress(uint _proposalID) constant returns (address _newDAO);\n\n    /// @param _account The address of the account which is checked.\n    /// @return Whether the account is blocked (not allowed to transfer tokens) or not.\n    function isBlocked(address _account) internal returns (bool);\n\n    /// @notice If the caller is blocked by a proposal whose voting deadline\n    /// has exprired then unblock him.\n    /// @return Whether the account is blocked (not allowed to transfer tokens) or not.\n    function unblockMe() returns (bool);\n\n    event ProposalAdded(\n        uint indexed proposalID,\n        address recipient,\n        uint amount,\n        bool newCurator,\n        string description\n    );\n    event Voted(uint indexed proposalID, bool position, address indexed voter);\n    event ProposalTallied(uint indexed proposalID, bool result, uint quorum);\n    event NewCurator(address indexed _newCurator);\n    event AllowedRecipientChanged(address indexed _recipient, bool _allowed);\n}\n\n// The DAO contract itself\ncontract DAO is DAOInterface, Token, TokenCreation {\n\n    // Modifier that allows only shareholders to vote and create new proposals\n    modifier onlyTokenholders {\n        if (balanceOf(msg.sender) == 0) throw;\n            _\n    }\n\n    function DAO(\n        address _curator,\n        DAO_Creator _daoCreator,\n        uint _proposalDeposit,\n        uint _minTokensToCreate,\n        uint _closingTime,\n        address _privateCreation\n    ) TokenCreation(_minTokensToCreate, _closingTime, _privateCreation) {\n\n        curator = _curator;\n        daoCreator = _daoCreator;\n        proposalDeposit = _proposalDeposit;\n        rewardAccount = new ManagedAccount(address(this), false);\n        DAOrewardAccount = new ManagedAccount(address(this), false);\n        if (address(rewardAccount) == 0)\n            throw;\n        if (address(DAOrewardAccount) == 0)\n            throw;\n        lastTimeMinQuorumMet = now;\n        minQuorumDivisor = 5; // sets the minimal quorum to 20%\n        proposals.length = 1; // avoids a proposal with ID 0 because it is used\n\n        allowedRecipients[address(this)] = true;\n        allowedRecipients[curator] = true;\n    }\n\n    function () returns (bool success) {\n        if (now < closingTime + creationGracePeriod && msg.sender != address(extraBalance))\n            return createTokenProxy(msg.sender);\n        else\n            return receiveEther();\n    }\n\n\n    function receiveEther() returns (bool) {\n        return true;\n    }\n\n\n    function newProposal(\n        address _recipient,\n        uint _amount,\n        string _description,\n        bytes _transactionData,\n        uint _debatingPeriod,\n        bool _newCurator\n    ) onlyTokenholders returns (uint _proposalID) {\n\n        // Sanity check\n        if (_newCurator && (\n            _amount != 0\n            || _transactionData.length != 0\n            || _recipient == curator\n            || msg.value > 0\n            || _debatingPeriod < minSplitDebatePeriod)) {\n            throw;\n        } else if (\n            !_newCurator\n            && (!isRecipientAllowed(_recipient) || (_debatingPeriod <  minProposalDebatePeriod))\n        ) {\n            throw;\n        }\n\n        if (_debatingPeriod > 8 weeks)\n            throw;\n\n        if (!isFueled\n            || now < closingTime\n            || (msg.value < proposalDeposit && !_newCurator)) {\n\n            throw;\n        }\n\n        if (now + _debatingPeriod < now) // prevents overflow\n            throw;\n\n        // to prevent a 51% attacker to convert the ether into deposit\n        if (msg.sender == address(this))\n            throw;\n\n        _proposalID = proposals.length++;\n        Proposal p = proposals[_proposalID];\n        p.recipient = _recipient;\n        p.amount = _amount;\n        p.description = _description;\n        p.proposalHash = sha3(_recipient, _amount, _transactionData);\n        p.votingDeadline = now + _debatingPeriod;\n        p.open = true;\n        //p.proposalPassed = False; // that's default\n        p.newCurator = _newCurator;\n        if (_newCurator)\n            p.splitData.length++;\n        p.creator = msg.sender;\n        p.proposalDeposit = msg.value;\n\n        sumOfProposalDeposits += msg.value;\n\n        ProposalAdded(\n            _proposalID,\n            _recipient,\n            _amount,\n            _newCurator,\n            _description\n        );\n    }\n\n\n    function checkProposalCode(\n        uint _proposalID,\n        address _recipient,\n        uint _amount,\n        bytes _transactionData\n    ) noEther constant returns (bool _codeChecksOut) {\n        Proposal p = proposals[_proposalID];\n        return p.proposalHash == sha3(_recipient, _amount, _transactionData);\n    }\n\n\n    function vote(\n        uint _proposalID,\n        bool _supportsProposal\n    ) onlyTokenholders noEther returns (uint _voteID) {\n\n        Proposal p = proposals[_proposalID];\n        if (p.votedYes[msg.sender]\n            || p.votedNo[msg.sender]\n            || now >= p.votingDeadline) {\n\n            throw;\n        }\n\n        if (_supportsProposal) {\n            p.yea += balances[msg.sender];\n            p.votedYes[msg.sender] = true;\n        } else {\n            p.nay += balances[msg.sender];\n            p.votedNo[msg.sender] = true;\n        }\n\n        if (blocked[msg.sender] == 0) {\n            blocked[msg.sender] = _proposalID;\n        } else if (p.votingDeadline > proposals[blocked[msg.sender]].votingDeadline) {\n            // this proposal's voting deadline is further into the future than\n            // the proposal that blocks the sender so make it the blocker\n            blocked[msg.sender] = _proposalID;\n        }\n\n        Voted(_proposalID, _supportsProposal, msg.sender);\n    }\n\n\n    function executeProposal(\n        uint _proposalID,\n        bytes _transactionData\n    ) noEther returns (bool _success) {\n\n        Proposal p = proposals[_proposalID];\n\n        uint waitPeriod = p.newCurator\n            ? splitExecutionPeriod\n            : executeProposalPeriod;\n        // If we are over deadline and waiting period, assert proposal is closed\n        if (p.open && now > p.votingDeadline + waitPeriod) {\n            closeProposal(_proposalID);\n            return;\n        }\n\n        // Check if the proposal can be executed\n        if (now < p.votingDeadline  // has the voting deadline arrived?\n            // Have the votes been counted?\n            || !p.open\n            // Does the transaction code match the proposal?\n            || p.proposalHash != sha3(p.recipient, p.amount, _transactionData)) {\n\n            throw;\n        }\n\n        // If the curator removed the recipient from the whitelist, close the proposal\n        // in order to free the deposit and allow unblocking of voters\n        if (!isRecipientAllowed(p.recipient)) {\n            closeProposal(_proposalID);\n            p.creator.send(p.proposalDeposit);\n            return;\n        }\n\n        bool proposalCheck = true;\n\n        if (p.amount > actualBalance())\n            proposalCheck = false;\n\n        uint quorum = p.yea + p.nay;\n\n        // require 53% for calling newContract()\n        if (_transactionData.length >= 4 && _transactionData[0] == 0x68\n            && _transactionData[1] == 0x37 && _transactionData[2] == 0xff\n            && _transactionData[3] == 0x1e\n            && quorum < minQuorum(actualBalance() + rewardToken[address(this)])) {\n\n                proposalCheck = false;\n        }\n\n        if (quorum >= minQuorum(p.amount)) {\n            if (!p.creator.send(p.proposalDeposit))\n                throw;\n\n            lastTimeMinQuorumMet = now;\n            // set the minQuorum to 20% again, in the case it has been reached\n            if (quorum > totalSupply / 5)\n                minQuorumDivisor = 5;\n        }\n\n        // Execute result\n        if (quorum >= minQuorum(p.amount) && p.yea > p.nay && proposalCheck) {\n            if (!p.recipient.call.value(p.amount)(_transactionData))\n                throw;\n\n            p.proposalPassed = true;\n            _success = true;\n\n            // only create reward tokens when ether is not sent to the DAO itself and\n            // related addresses. Proxy addresses should be forbidden by the curator.\n            if (p.recipient != address(this) && p.recipient != address(rewardAccount)\n                && p.recipient != address(DAOrewardAccount)\n                && p.recipient != address(extraBalance)\n                && p.recipient != address(curator)) {\n\n                rewardToken[address(this)] += p.amount;\n                totalRewardToken += p.amount;\n            }\n        }\n\n        closeProposal(_proposalID);\n\n        // Initiate event\n        ProposalTallied(_proposalID, _success, quorum);\n    }\n\n\n    function closeProposal(uint _proposalID) internal {\n        Proposal p = proposals[_proposalID];\n        if (p.open)\n            sumOfProposalDeposits -= p.proposalDeposit;\n        p.open = false;\n    }\n\n    function splitDAO(\n        uint _proposalID,\n        address _newCurator\n    ) noEther onlyTokenholders returns (bool _success) {\n\n        Proposal p = proposals[_proposalID];\n\n        // Sanity check\n\n        if (now < p.votingDeadline  // has the voting deadline arrived?\n            //The request for a split expires XX days after the voting deadline\n            || now > p.votingDeadline + splitExecutionPeriod\n            // Does the new Curator address match?\n            || p.recipient != _newCurator\n            // Is it a new curator proposal?\n            || !p.newCurator\n            // Have you voted for this split?\n            || !p.votedYes[msg.sender]\n            // Did you already vote on another proposal?\n            || (blocked[msg.sender] != _proposalID && blocked[msg.sender] != 0) )  {\n\n            throw;\n        }\n\n        // If the new DAO doesn't exist yet, create the new DAO and store the\n        // current split data\n        if (address(p.splitData[0].newDAO) == 0) {\n            p.splitData[0].newDAO = createNewDAO(_newCurator);\n            // Call depth limit reached, etc.\n            if (address(p.splitData[0].newDAO) == 0)\n                throw;\n            // should never happen\n            if (this.balance < sumOfProposalDeposits)\n                throw;\n            p.splitData[0].splitBalance = actualBalance();\n            p.splitData[0].rewardToken = rewardToken[address(this)];\n            p.splitData[0].totalSupply = totalSupply;\n            p.proposalPassed = true;\n        }\n\n        // Move ether and assign new Tokens\n        uint fundsToBeMoved =\n            (balances[msg.sender] * p.splitData[0].splitBalance) /\n            p.splitData[0].totalSupply;\n        if (p.splitData[0].newDAO.createTokenProxy.value(fundsToBeMoved)(msg.sender) == false)\n            throw;\n\n\n        // Assign reward rights to new DAO\n        uint rewardTokenToBeMoved =\n            (balances[msg.sender] * p.splitData[0].rewardToken) /\n            p.splitData[0].totalSupply;\n\n        uint paidOutToBeMoved = DAOpaidOut[address(this)] * rewardTokenToBeMoved /\n            rewardToken[address(this)];\n\n        rewardToken[address(p.splitData[0].newDAO)] += rewardTokenToBeMoved;\n        if (rewardToken[address(this)] < rewardTokenToBeMoved)\n            throw;\n        rewardToken[address(this)] -= rewardTokenToBeMoved;\n\n        DAOpaidOut[address(p.splitData[0].newDAO)] += paidOutToBeMoved;\n        if (DAOpaidOut[address(this)] < paidOutToBeMoved)\n            throw;\n        DAOpaidOut[address(this)] -= paidOutToBeMoved;\n\n        // Burn DAO Tokens\n        Transfer(msg.sender, 0, balances[msg.sender]);\n        withdrawRewardFor(msg.sender); // be nice, and get his rewards\n        totalSupply -= balances[msg.sender];\n        balances[msg.sender] = 0;\n        paidOut[msg.sender] = 0;\n        return true;\n    }\n\n    function newContract(address _newContract){\n        if (msg.sender != address(this) || !allowedRecipients[_newContract]) return;\n        // move all ether\n        if (!_newContract.call.value(address(this).balance)()) {\n            throw;\n        }\n\n        //move all reward tokens\n        rewardToken[_newContract] += rewardToken[address(this)];\n        rewardToken[address(this)] = 0;\n        DAOpaidOut[_newContract] += DAOpaidOut[address(this)];\n        DAOpaidOut[address(this)] = 0;\n    }\n\n\n    function retrieveDAOReward(bool _toMembers) external noEther returns (bool _success) {\n        DAO dao = DAO(msg.sender);\n\n        if ((rewardToken[msg.sender] * DAOrewardAccount.accumulatedInput()) /\n            totalRewardToken < DAOpaidOut[msg.sender])\n            throw;\n\n        uint reward =\n            (rewardToken[msg.sender] * DAOrewardAccount.accumulatedInput()) /\n            totalRewardToken - DAOpaidOut[msg.sender];\n        if(_toMembers) {\n            if (!DAOrewardAccount.payOut(dao.rewardAccount(), reward))\n                throw;\n            }\n        else {\n            if (!DAOrewardAccount.payOut(dao, reward))\n                throw;\n        }\n        DAOpaidOut[msg.sender] += reward;\n        return true;\n    }\n\n    function getMyReward() noEther returns (bool _success) {\n        return withdrawRewardFor(msg.sender);\n    }\n\n\n    function withdrawRewardFor(address _account) noEther internal returns (bool _success) {\n        if ((balanceOf(_account) * rewardAccount.accumulatedInput()) / totalSupply < paidOut[_account])\n            throw;\n\n        uint reward =\n            (balanceOf(_account) * rewardAccount.accumulatedInput()) / totalSupply - paidOut[_account];\n        if (!rewardAccount.payOut(_account, reward))\n            throw;\n        paidOut[_account] += reward;\n        return true;\n    }\n\n\n    function transfer(address _to, uint256 _value) returns (bool success) {\n        if (isFueled\n            && now > closingTime\n            && !isBlocked(msg.sender)\n            && transferPaidOut(msg.sender, _to, _value)\n            && super.transfer(_to, _value)) {\n\n            return true;\n        } else {\n            throw;\n        }\n    }\n\n\n    function transferWithoutReward(address _to, uint256 _value) returns (bool success) {\n        if (!getMyReward())\n            throw;\n        return transfer(_to, _value);\n    }\n\n\n    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {\n        if (isFueled\n            && now > closingTime\n            && !isBlocked(_from)\n            && transferPaidOut(_from, _to, _value)\n            && super.transferFrom(_from, _to, _value)) {\n\n            return true;\n        } else {\n            throw;\n        }\n    }\n\n\n    function transferFromWithoutReward(\n        address _from,\n        address _to,\n        uint256 _value\n    ) returns (bool success) {\n\n        if (!withdrawRewardFor(_from))\n            throw;\n        return transferFrom(_from, _to, _value);\n    }\n\n\n    function transferPaidOut(\n        address _from,\n        address _to,\n        uint256 _value\n    ) internal returns (bool success) {\n\n        uint transferPaidOut = paidOut[_from] * _value / balanceOf(_from);\n        if (transferPaidOut > paidOut[_from])\n            throw;\n        paidOut[_from] -= transferPaidOut;\n        paidOut[_to] += transferPaidOut;\n        return true;\n    }\n\n\n    function changeProposalDeposit(uint _proposalDeposit) noEther external {\n        if (msg.sender != address(this) || _proposalDeposit > (actualBalance() + rewardToken[address(this)])\n            / maxDepositDivisor) {\n\n            throw;\n        }\n        proposalDeposit = _proposalDeposit;\n    }\n\n\n    function changeAllowedRecipients(address _recipient, bool _allowed) noEther external returns (bool _success) {\n        if (msg.sender != curator)\n            throw;\n        allowedRecipients[_recipient] = _allowed;\n        AllowedRecipientChanged(_recipient, _allowed);\n        return true;\n    }\n\n\n    function isRecipientAllowed(address _recipient) internal returns (bool _isAllowed) {\n        if (allowedRecipients[_recipient]\n            || (_recipient == address(extraBalance)\n                // only allowed when at least the amount held in the\n                // extraBalance account has been spent from the DAO\n                && totalRewardToken > extraBalance.accumulatedInput()))\n            return true;\n        else\n            return false;\n    }\n\n    function actualBalance() constant returns (uint _actualBalance) {\n        return this.balance - sumOfProposalDeposits;\n    }\n\n\n    function minQuorum(uint _value) internal constant returns (uint _minQuorum) {\n        // minimum of 20% and maximum of 53.33%\n        return totalSupply / minQuorumDivisor +\n            (_value * totalSupply) / (3 * (actualBalance() + rewardToken[address(this)]));\n    }\n\n\n    function halveMinQuorum() returns (bool _success) {\n        // this can only be called after `quorumHalvingPeriod` has passed or at anytime\n        // by the curator with a delay of at least `minProposalDebatePeriod` between the calls\n        if ((lastTimeMinQuorumMet < (now - quorumHalvingPeriod) || msg.sender == curator)\n            && lastTimeMinQuorumMet < (now - minProposalDebatePeriod)) {\n            lastTimeMinQuorumMet = now;\n            minQuorumDivisor *= 2;\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n    function createNewDAO(address _newCurator) internal returns (DAO _newDAO) {\n        NewCurator(_newCurator);\n        return daoCreator.createDAO(_newCurator, 0, 0, now + splitExecutionPeriod);\n    }\n\n    function numberOfProposals() constant returns (uint _numberOfProposals) {\n        // Don't count index 0. It's used by isBlocked() and exists from start\n        return proposals.length - 1;\n    }\n\n    function getNewDAOAddress(uint _proposalID) constant returns (address _newDAO) {\n        return proposals[_proposalID].splitData[0].newDAO;\n    }\n\n    function isBlocked(address _account) internal returns (bool) {\n        if (blocked[_account] == 0)\n            return false;\n        Proposal p = proposals[blocked[_account]];\n        if (now > p.votingDeadline) {\n            blocked[_account] = 0;\n            return false;\n        } else {\n            return true;\n        }\n    }\n\n    function unblockMe() returns (bool) {\n        return isBlocked(msg.sender);\n    }\n}\n\ncontract DAO_Creator {\n    function createDAO(\n        address _curator,\n        uint _proposalDeposit,\n        uint _minTokensToCreate,\n        uint _closingTime\n    ) returns (DAO _newDAO) {\n\n        return new DAO(\n            _curator,\n            DAO_Creator(this),\n            _proposalDeposit,\n            _minTokensToCreate,\n            _closingTime,\n            msg.sender\n        );\n    }\n}\n",
+"ABI": "[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"proposals\",\"outputs\":[{\"name\":\"recipient\",\"type\":\"address\"},{\"name\":\"amount\",\"type\":\"uint256\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"votingDeadline\",\"type\":\"uint256\"},{\"name\":\"open\",\"type\":\"bool\"},{\"name\":\"proposalPassed\",\"type\":\"bool\"},{\"name\":\"proposalHash\",\"type\":\"bytes32\"},{\"name\":\"proposalDeposit\",\"type\":\"uint256\"},{\"name\":\"newCurator\",\"type\":\"bool\"},{\"name\":\"yea\",\"type\":\"uint256\"},{\"name\":\"nay\",\"type\":\"uint256\"},{\"name\":\"creator\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_spender\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minTokensToCreate\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"rewardAccount\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"daoCreator\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"divisor\",\"outputs\":[{\"name\":\"divisor\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"extraBalance\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"},{\"name\":\"_transactionData\",\"type\":\"bytes\"}],\"name\":\"executeProposal\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"unblockMe\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalRewardToken\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"actualBalance\",\"outputs\":[{\"name\":\"_actualBalance\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"closingTime\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"allowedRecipients\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferWithoutReward\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"refund\",\"outputs\":[],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_description\",\"type\":\"string\"},{\"name\":\"_transactionData\",\"type\":\"bytes\"},{\"name\":\"_debatingPeriod\",\"type\":\"uint256\"},{\"name\":\"_newCurator\",\"type\":\"bool\"}],\"name\":\"newProposal\",\"outputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"DAOpaidOut\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minQuorumDivisor\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_newContract\",\"type\":\"address\"}],\"name\":\"newContract\",\"outputs\":[],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"balance\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_recipient\",\"type\":\"address\"},{\"name\":\"_allowed\",\"type\":\"bool\"}],\"name\":\"changeAllowedRecipients\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"halveMinQuorum\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"paidOut\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"},{\"name\":\"_newCurator\",\"type\":\"address\"}],\"name\":\"splitDAO\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"DAOrewardAccount\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"proposalDeposit\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"numberOfProposals\",\"outputs\":[{\"name\":\"_numberOfProposals\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"lastTimeMinQuorumMet\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_toMembers\",\"type\":\"bool\"}],\"name\":\"retrieveDAOReward\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"receiveEther\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isFueled\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_tokenHolder\",\"type\":\"address\"}],\"name\":\"createTokenProxy\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"}],\"name\":\"getNewDAOAddress\",\"outputs\":[{\"name\":\"_newDAO\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"},{\"name\":\"_supportsProposal\",\"type\":\"bool\"}],\"name\":\"vote\",\"outputs\":[{\"name\":\"_voteID\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"getMyReward\",\"outputs\":[{\"name\":\"_success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"rewardToken\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_from\",\"type\":\"address\"},{\"name\":\"_to\",\"type\":\"address\"},{\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFromWithoutReward\",\"outputs\":[{\"name\":\"success\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_owner\",\"type\":\"address\"},{\"name\":\"_spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"name\":\"remaining\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_proposalDeposit\",\"type\":\"uint256\"}],\"name\":\"changeProposalDeposit\",\"outputs\":[],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"blocked\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"curator\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_proposalID\",\"type\":\"uint256\"},{\"name\":\"_recipient\",\"type\":\"address\"},{\"name\":\"_amount\",\"type\":\"uint256\"},{\"name\":\"_transactionData\",\"type\":\"bytes\"}],\"name\":\"checkProposalCode\",\"outputs\":[{\"name\":\"_codeChecksOut\",\"type\":\"bool\"}],\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"privateCreation\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"type\":\"function\"},{\"inputs\":[{\"name\":\"_curator\",\"type\":\"address\"},{\"name\":\"_daoCreator\",\"type\":\"address\"},{\"name\":\"_proposalDeposit\",\"type\":\"uint256\"},{\"name\":\"_minTokensToCreate\",\"type\":\"uint256\"},{\"name\":\"_closingTime\",\"type\":\"uint256\"},{\"name\":\"_privateCreation\",\"type\":\"address\"}],\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":true,\"name\":\"_spender\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"FuelingToDate\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"CreatedToken\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Refund\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"proposalID\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"recipient\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"newCurator\",\"type\":\"bool\"},{\"indexed\":false,\"name\":\"description\",\"type\":\"string\"}],\"name\":\"ProposalAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"proposalID\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"position\",\"type\":\"bool\"},{\"indexed\":true,\"name\":\"voter\",\"type\":\"address\"}],\"name\":\"Voted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"proposalID\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"result\",\"type\":\"bool\"},{\"indexed\":false,\"name\":\"quorum\",\"type\":\"uint256\"}],\"name\":\"ProposalTallied\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_newCurator\",\"type\":\"address\"}],\"name\":\"NewCurator\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"_recipient\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"_allowed\",\"type\":\"bool\"}],\"name\":\"AllowedRecipientChanged\",\"type\":\"event\"}]",
+"ContractName": "DAO",
+"CompilerVersion": "v0.3.1-2016-04-12-3ad5e82",
+"OptimizationUsed": "1",
+"Runs": "200",
+"ConstructorArguments": "000000000000000000000000da4a4626d3e16e094de3225a751aab7128e965260000000000000000000000004a574510c7014e4ae985403536074abe582adfc80000000000000000000000000000000000000000000000001bc16d674ec80000000000000000000000000000000000000000000000000a968163f0a57b4000000000000000000000000000000000000000000000000000000000000057495e100000000000000000000000000000000000000000000000000000000000000000",
+"Library": "",
+"SwarmSource": ""
+}
+]
+}
+
+#####################
+#
+#   transactions    #
+#
+#####################
+
+#WORKS
+[BETA] Check Contract Execution Status (if there was an error during contract execution)
+Note: isError":"0" = Pass , isError":"1" = Error during Contract Execution
+https://api.etherscan.io/api?module=transaction&action=getstatus&txhash=0x15f8e5ea1079d9a0bb04a4c58ae5fe7654b5b2b4463375ff7ffb490aa0032f3a&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": {
+"isError": "1",
+"errDescription": "Bad jump destination"
+}
+}
+
+#WORKS
+[BETA] Check Transaction Receipt Status (Only applicable for Post Byzantium fork transactions)
+Note: status: 0 = Fail, 1 = Pass. Will return null/empty value for pre-byzantium fork
+https://api.etherscan.io/api?module=transaction&action=gettxreceiptstatus&txhash=0x513c1ba0bebf66436b5fed86ab668452b7805593c05073eb2d51d3a52f480a76&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": {
+"status": "1"
+}
+}
+
+#####################
+#
+#       blocks      #
+#
+#####################
+
+# WORKS
+[BETA] Get Block And Uncle Rewards by BlockNo
+https://api.etherscan.io/api?module=block&action=getblockreward&blockno=2165403&apikey=YourApiKeyToken
+
+{
+"status": "1",
+"message": "OK",
+"result": {
+"blockNumber": "2165403",
+"timeStamp": "1472533979",
+"blockMiner": "0x13a06d3dfe21e0db5c016c03ea7d2509f7f8d1e3",
+"blockReward": "5314181600000000000",
+"uncles": [
+{
+"miner": "0xbcdfc35b86bedf72f0cda046a3c16829a2ef41d1",
+"unclePosition": "0",
+"blockreward": "3750000000000000000"
+},
+{
+"miner": "0x0d0c9855c722ff0c78f21e43aa275a5b8ea60dce",
+"unclePosition": "1",
+"blockreward": "3750000000000000000"
+}
+],
+"uncleInclusionReward": "312500000000000000"
+}
+}
+
+
+#####################
+#
+#     Event Logs    #
+#
+#####################
+
+# NOT WORKING :) IN BETA MODE
+
+# [Beta] The Event Log API was designed to provide an alternative to the native eth_getLogs. Below are the list of supported filter parameters:
+
+# fromBlock, toBlock, address
+# topic0, topic1, topic2, topic3 (32 Bytes per topic)
+# topic0_1_opr (and|or between topic0 & topic1), topic1_2_opr (and|or between topic1 & topic2), topic2_3_opr (and|or between topic2 & topic3), topic0_2_opr (and|or between topic0 & topic2), topic0_3_opr (and|or between topic0 & topic3), topic1_3_opr (and|or between topic1 & topic3)
+# * fromBlock and toBlock accepts the blocknumber (integer, NOT hex) or 'latest' (earliest & pending is NOT supported yet)
+# * Topic Operator (opr) choices are either 'and' or 'or' and are restricted to the above choices only
+# * fromBlock and toBlock parameters are required
+# * Either the address and/or topic(X) parameters are required, when multiple topic(X) parameters are used the topicX_X_opr (and|or operator) is also required
+# * For performance & security considerations, only the first 1000 results are return. So please narrow down the filter parameters
+
+# 0xf63780e752c6a54a94fc52715dbc5518a3b4c3c2833d301a204226548a2a8545
+
+# #EXAMPLE 1
+# https://api.etherscan.io/api?module=logs&action=getLogs
+# &fromBlock=379224
+# &toBlock=latest
+# &address=0x33990122638b9132ca29c723bdf037f1a891a70c
+# &topic0=0xf63780e752c6a54a94fc52715dbc5518a3b4c3c2833d301a204226548a2a8545
+# &apikey=YourApiKeyToken
+# {
+# "status": "1",
+# "message": "OK",
+# "result": [
+# {
+# "address": "0x33990122638b9132ca29c723bdf037f1a891a70c",
+# "topics": [
+# "0xf63780e752c6a54a94fc52715dbc5518a3b4c3c2833d301a204226548a2a8545",
+# "0x72657075746174696f6e00000000000000000000000000000000000000000000",
+# "0x000000000000000000000000d9b2f59f3b5c7b3c67047d2f03c3e8052470be92"
+# ],
+# "data": "0x",
+# "blockNumber": "0x5c958",
+# "timeStamp": "0x561d688c",
+# "gasPrice": "0xba43b7400",
+# "gasUsed": "0x10682",
+# "logIndex": "0x",
+# "transactionHash": "0x0b03498648ae2da924f961dda00dc6bb0a8df15519262b7e012b7d67f4bb7e83",
+# "transactionIndex": "0x"
+# }
+# ]
+# }
+
+# EXAMPLE 2
+Get Event Logs from block number 379224 to block 400000 , where log address = 0x33990122638b9132ca29c723bdf037f1a891a70c, topic[0] = 0xf63780e752c6a54a94fc52715dbc5518a3b4c3c2833d301a204226548a2a8545 'AND' topic[1] = 0x72657075746174696f6e00000000000000000000000000000000000000000000
+https://api.etherscan.io/api?module=logs&action=getLogs
+&fromBlock=379224
+&toBlock=400000
+&address=0x33990122638b9132ca29c723bdf037f1a891a70c
+&topic0=0xf63780e752c6a54a94fc52715dbc5518a3b4c3c2833d301a204226548a2a8545
+&topic0_1_opr=and
+&topic1=0x72657075746174696f6e00000000000000000000000000000000000000000000
+&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": [
+{
+"address": "0x33990122638b9132ca29c723bdf037f1a891a70c",
+"topics": [
+"0xf63780e752c6a54a94fc52715dbc5518a3b4c3c2833d301a204226548a2a8545",
+"0x72657075746174696f6e00000000000000000000000000000000000000000000",
+"0x000000000000000000000000d9b2f59f3b5c7b3c67047d2f03c3e8052470be92"
+],
+"data": "0x",
+"blockNumber": "0x5c958",
+"timeStamp": "0x561d688c",
+"gasPrice": "0xba43b7400",
+"gasUsed": "0x10682",
+"logIndex": "0x",
+"transactionHash": "0x0b03498648ae2da924f961dda00dc6bb0a8df15519262b7e012b7d67f4bb7e83",
+"transactionIndex": "0x"
+}
+]
+}
+
+#####################
+#
+# GETH/Paritx Proxy #
+#
+#####################
+
+# WORKS
+# eth_blockNumber
+Returns the number of most recent block
+https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 83,
+"result": "0x68e580"
+}
+
+#WORKS
+# eth_getBlockByNumber
+Returns information about a block by block number.
+https://api.etherscan.io/api?module=proxy
+&action=eth_getBlockByNumber
+&tag=0x10d4f
+&boolean=true
+&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": {
+"difficulty": "0x1d95715bd14",
+"extraData": "0x",
+"gasLimit": "0x2fefd8",
+"gasUsed": "0x5208",
+"hash": "0x7eb7c23a5ac2f2d70aa1ba4e5c56d89de5ac993590e5f6e79c394e290d998ba8",
+"logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+"miner": "0xf927a40c8b7f6e07c5af7fa2155b4864a4112b13",
+"mixHash": "0x13dd2c8aec729f75aebcd79a916ecb0f7edc6493efcc6a4da8d7b0ab3ee88444",
+"nonce": "0xc60a782e2e69ce22",
+"number": "0x10d4f",
+"parentHash": "0xf8d01370e6e274f8188954fbee435b40c35b2ad3d4ab671f6d086cd559e48f04",
+"receiptsRoot": "0x0c44b7ed0fefb613ec256341aa0ffdb643e869e3a0ebc8f58e36b4e47efedd33",
+"sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+"size": "0x275",
+"stateRoot": "0xd64a0f63e2c7f541e6e6f8548a10a5c4e49fda7ac1aa80f9dddef648c7b9e25f",
+"timestamp": "0x55c9ea07",
+"totalDifficulty": "0x120d56f6821b170",
+"transactions": [
+{
+"blockHash": "0x7eb7c23a5ac2f2d70aa1ba4e5c56d89de5ac993590e5f6e79c394e290d998ba8",
+"blockNumber": "0x10d4f",
+"from": "0x4458f86353b4740fe9e09071c23a7437640063c9",
+"gas": "0x5208",
+"gasPrice": "0xba43b7400",
+"hash": "0xa442249820de6be754da81eafbd44a865773e4b23d7c0522d31fd03977823008",
+"input": "0x",
+"nonce": "0x1",
+"to": "0xbf3403210f9802205f426759947a80a9fda71b1e",
+"transactionIndex": "0x0",
+"value": "0xaa9f075c200000",
+"v": "0x1b",
+"r": "0x2c2789c6704ba2606e200e1ba4fd17ba4f0e0f94abe32a12733708c3d3442616",
+"s": "0x2946f47e3ece580b5b5ecb0f8c52604fa5f60aeb4103fc73adcbf6d620f9872b"
+}
+],
+"transactionsRoot": "0x4a5b78c13d11559c9541576834b5172fe8b18507c0f9f76454fcdddedd8dff7a",
+"uncles": []
+}
+}
+
+# WORKING
+# eth_getUncleByBlockNumberAndIndex
+Returns information about a uncle by block number.
+https://api.etherscan.io/api?module=proxy&action=eth_getUncleByBlockNumberAndIndex&tag=0x210A9B&index=0x0&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": {
+"difficulty": "0x3db79ff5de86",
+"extraData": "0x7777772e62772e636f6d",
+"gasLimit": "0x47e7c4",
+"gasUsed": "0x14820",
+"hash": "0x5ad884f542215bbb0b7e2558b2309ce89132e559ee1b001e81b77e702b43d932",
+"logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+"miner": "0xbcdfc35b86bedf72f0cda046a3c16829a2ef41d1",
+"mixHash": "0x8d3e8e65a0803e3c023bafcd373e1d272c4f463ba0116f3e9591a8dc1e5b5018",
+"nonce": "0x151a6600143aad31",
+"number": "0x210a99",
+"parentHash": "0x30fe09876530e366a49b6a3aa64c26cf7cd4348aa32a6ad83564b0ea4b3830ed",
+"receiptsRoot": "0xf43ffa3981d0c714e1f677082fc15e69f408263f542bb98a2ac47d8d92f540fe",
+"sha3Uncles": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347",
+"size": "0x212",
+"stateRoot": "0xce52569ccaa08e9030fc0fa5750332f7d2bc111699e3adb6c6927b73b5c56f14",
+"timestamp": "0x57c515ba",
+"totalDifficulty": null,
+"transactionsRoot": "0x057c513a2722663a43b29d66b49809876289e3c7497b84e3bee52bb7648fba50",
+"uncles": []
+}
+}
+
+# WORKS
+# eth_getBlockTransactionCountByNumber
+Returns the number of transactions in a block from a block matching the given block number
+
+https://api.etherscan.io/api?module=proxy&action=eth_getBlockTransactionCountByNumber&tag=0x10FB78&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": "0x3"
+}
+
+# WORKS
+# eth_getTransactionByHash
+Returns the information about a transaction requested by transaction hash
+https://api.etherscan.io/api?module=proxy&action=eth_getTransactionByHash&txhash=0x1e2910a262b1008d0616a0beb24c1a491d78771baa54a33e66065e03b1f46bc1&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": {
+"blockHash": "0xf64a12502afc36db3d29931a2148e5d6ddaa883a2a3c968ca2fb293fa9258c68",
+"blockNumber": "0x70839",
+"from": "0xc80fb22930b303b55df9b89901889126400add38",
+"gas": "0x30d40",
+"gasPrice": "0xba43b7400",
+"hash": "0x1e2910a262b1008d0616a0beb24c1a491d78771baa54a33e66065e03b1f46bc1",
+"input": "0xfc36e15b0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a4861636b65726e65777300000000000000000000000000000000000000000000",
+"nonce": "0xa7",
+"to": "0x03fca6077d38dd99d0ce14ba32078bd2cda72d74",
+"transactionIndex": "0x0",
+"value": "0x0",
+"v": "0x1c",
+"r": "0xe7ccdba116aa95ae8d9bdd02f619a0cdfc1f60c5740b3899865822a80cd70218",
+"s": "0xf200df1921ea988d16280a0873b69cb782a54e8a596d15e700710c820c8d2a9e"
+}
+}
+
+#WORKS
+# eth_getTransactionByBlockNumberAndIndex
+Returns information about a transaction by block number and transaction index position
+https://api.etherscan.io/api?module=proxy&action=eth_getTransactionByBlockNumberAndIndex&tag=0x10d4f&index=0x0&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": {
+"blockHash": "0x7eb7c23a5ac2f2d70aa1ba4e5c56d89de5ac993590e5f6e79c394e290d998ba8",
+"blockNumber": "0x10d4f",
+"from": "0x4458f86353b4740fe9e09071c23a7437640063c9",
+"gas": "0x5208",
+"gasPrice": "0xba43b7400",
+"hash": "0xa442249820de6be754da81eafbd44a865773e4b23d7c0522d31fd03977823008",
+"input": "0x",
+"nonce": "0x1",
+"to": "0xbf3403210f9802205f426759947a80a9fda71b1e",
+"transactionIndex": "0x0",
+"value": "0xaa9f075c200000",
+"v": "0x1b",
+"r": "0x2c2789c6704ba2606e200e1ba4fd17ba4f0e0f94abe32a12733708c3d3442616",
+"s": "0x2946f47e3ece580b5b5ecb0f8c52604fa5f60aeb4103fc73adcbf6d620f9872b"
+}
+}
+
+# WORKS
+# eth_getTransactionCount
+Returns the number of transactions sent from an address
+https://api.etherscan.io/api?module=proxy&action=eth_getTransactionCount&address=0x2910543af39aba0cd09dbb2d50200b3e800a63d2&tag=latest&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": "0xaf5d"
+}
+
+
+# NOT SUPPORTED NOW
+# eth_sendRawTransaction
+# Creates new message call transaction or a contract creation for signed transactions
+
+# https://api.etherscan.io/api?module=proxy&action=eth_sendRawTransaction&hex=0xf904808000831cfde080&apikey=YourApiKeyToken
+# (Replace the hex value with your raw hex encoded transaction that you want to send.
+# Send as a POST request, if your hex code is particularly long)
+# Simple Post
+# # Simple POST w/ node-fetch
+# # fetch('https://httpbin.org/post', { method: 'POST', body: 'a=1' })
+# #     .then(res => res.json()) // expecting a json response
+# #     .then(json => console.log(json));
+# {
+# "jsonrpc": "2.0",
+# "id": 1,
+# "result": {
+# "blockHash": "0xf64a12502afc36db3d29931a2148e5d6ddaa883a2a3c968ca2fb293fa9258c68",
+# "blockNumber": "0x70839",
+# "contractAddress": null,
+# "cumulativeGasUsed": "0x75d5",
+# "from": "0xc80fb22930b303b55df9b89901889126400add38",
+# "gasUsed": "0x75d5",
+# "logs": [
+# {
+# "address": "0x03fca6077d38dd99d0ce14ba32078bd2cda72d74",
+# "topics": [
+# "0x24bcf19562365f6510754002f8d7b818d275886315d29c7aa04785570b97a363"
+# ],
+# "data": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a4861636b65726e65777300000000000000000000000000000000000000000000",
+# "blockNumber": "0x70839",
+# "transactionHash": "0x1e2910a262b1008d0616a0beb24c1a491d78771baa54a33e66065e03b1f46bc1",
+# "transactionIndex": "0x0",
+# "blockHash": "0xf64a12502afc36db3d29931a2148e5d6ddaa883a2a3c968ca2fb293fa9258c68",
+# "logIndex": "0x0",
+# "removed": false
+# }
+# ],
+# "logsBloom": "0x00000000000000000000000000000400000000020000000000000000400000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+# "root": "0xc659845f1ac4e899ff1b0666dbac5deeda33a4a5d85da71f617f352824146e40",
+# "to": "0x03fca6077d38dd99d0ce14ba32078bd2cda72d74",
+# "transactionHash": "0x1e2910a262b1008d0616a0beb24c1a491d78771baa54a33e66065e03b1f46bc1",
+# "transactionIndex": "0x0"
+# }
+# }
+
+# WORKS
+# eth_getTransactionReceipt
+Returns the receipt of a transaction by transaction hash
+
+https://api.etherscan.io/api?module=proxy&action=eth_getTransactionReceipt&txhash=0x1e2910a262b1008d0616a0beb24c1a491d78771baa54a33e66065e03b1f46bc1&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": {
+"blockHash": "0xf64a12502afc36db3d29931a2148e5d6ddaa883a2a3c968ca2fb293fa9258c68",
+"blockNumber": "0x70839",
+"contractAddress": null,
+"cumulativeGasUsed": "0x75d5",
+"from": "0xc80fb22930b303b55df9b89901889126400add38",
+"gasUsed": "0x75d5",
+"logs": [
+{
+"address": "0x03fca6077d38dd99d0ce14ba32078bd2cda72d74",
+"topics": [
+"0x24bcf19562365f6510754002f8d7b818d275886315d29c7aa04785570b97a363"
+],
+"data": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a4861636b65726e65777300000000000000000000000000000000000000000000",
+"blockNumber": "0x70839",
+"transactionHash": "0x1e2910a262b1008d0616a0beb24c1a491d78771baa54a33e66065e03b1f46bc1",
+"transactionIndex": "0x0",
+"blockHash": "0xf64a12502afc36db3d29931a2148e5d6ddaa883a2a3c968ca2fb293fa9258c68",
+"logIndex": "0x0",
+"removed": false
+}
+],
+"logsBloom": "0x00000000000000000000000000000400000000020000000000000000400000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+"root": "0xc659845f1ac4e899ff1b0666dbac5deeda33a4a5d85da71f617f352824146e40",
+"to": "0x03fca6077d38dd99d0ce14ba32078bd2cda72d74",
+"transactionHash": "0x1e2910a262b1008d0616a0beb24c1a491d78771baa54a33e66065e03b1f46bc1",
+"transactionIndex": "0x0"
+}
+}
+
+
+# WORKS
+# eth_call
+Executes a new message call immediately without creating a transaction on the block chain
+
+https://api.etherscan.io/api?module=proxy&action=eth_call&to=0xAEEF46DB4855E25702F8237E8f403FddcaF931C0&data=0x70a08231000000000000000000000000e16359506c028e51f16be38986ec5746251e9724&tag=latest&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": "0x00000000000000000000000000000000000000000000000000601d8888141c00"
+}
+
+# WORKS
+# eth_getCode
+Returns code at a given address
+https://api.etherscan.io/api?module=proxy&action=eth_getCode&address=0xf75e354c5edc8efed9b59ee9f67a80845ade7d0c&tag=latest&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": "0x3660008037602060003660003473273930d21e01ee25e4c219b63259d214872220a261235a5a03f21560015760206000f3"
+}
+
+#WORKS
+# eth_getStorageAt (**experimental)
+Returns the value from a storage position at a given address.
+
+https://api.etherscan.io/api?module=proxy&action=eth_getStorageAt&address=0x6e03d9cce9d60f3e9f2597e13cd4c54c55330cfd&position=0x0&tag=latest&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 1,
+"result": "0x0000000000000000000000003d0768da09ce77d25e2d998e6a7b6ed4b9116c2d"
+}
+
+# WORKS
+# eth_gasPrice
+Returns the current price per gas in wei.
+https://api.etherscan.io/api?module=proxy&action=eth_gasPrice&apikey=YourApiKeyToken
+{
+"jsonrpc": "2.0",
+"id": 73,
+"result": "0xabdf5ef8"
+}
+
+#NOT SUPPORTED YET
+# eth_estimateGas
+# Makes a call or transaction, which won't be added to the blockchain and returns the used gas, which can be used for estimating the used gas
+# https://api.etherscan.io/api?module=proxy&action=eth_estimateGas&to=0xf0160428a8552ac9bb7e050d90eeade4ddd52843&value=0xff22&gasPrice=0x051da038cc&gas=0xffffff&apikey=YourApiKeyToken
+# {
+# "status": "1",
+# "message": "OK",
+# "result": "21265524714464"
+# }
+
+#####################
+#
+#       Tokens      #
+#
+#####################
+# WORKS
+#Get ERC20-Token TotalSupply by ContractAddress
+https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=0x57d90b64a1a57749b0f932f1a3395792e12e7055&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": "21265524714464"
+}
+# WORKS
+# Get ERC20-Token Account Balance for TokenContractAddress
+https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x57d90b64a1a57749b0f932f1a3395792e12e7055&address=0xe04f27eb70e025b78871a2ad7eabe85e61212761&tag=latest&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": "135499"
+}
+
+#####################
+#
+#        Stats      #
+#
+#####################
+
+# WORKS
+Get Total Supply of Ether
+https://api.etherscan.io/api?module=stats&action=ethsupply&apikey=YourApiKeyToken
+(Result returned in Wei, to get value in Ether divide resultAbove/1000000000000000000)
+
+{
+"status": "1",
+"message": "OK",
+"result": "103756820936500000000000000"
+}
+
+# WORKS
+Get ETHER LastPrice Price
+https://api.etherscan.io/api?module=stats&action=ethprice&apikey=YourApiKeyToken
+{
+"status": "1",
+"message": "OK",
+"result": {
+"ethbtc": "0.0261",
+"ethbtc_timestamp": "1544640679",
+"ethusd": "91.52",
+"ethusd_timestamp": "1544640682"
+}
+}

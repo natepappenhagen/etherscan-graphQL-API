@@ -1,0 +1,27 @@
+{
+  "name": "etherscan-graphql",
+  "version": "1.0.0",
+  "description": "graphql-wrapper-for-etherscan",
+  "main": "app.js",
+  "scripts": {
+    "start": "node dist/app.js ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist",
+    "dev": "nodemon src/app.js --ext js,graphql --exec babel-node"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "dotenv": "^6.2.0",
+    "graphql": "^14.0.2",
+    "graphql-yoga": "^1.16.7",
+    "nodemon": "^1.18.8"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.2.0",
+    "nodemon": "^1.18.8"
+  }
+}
