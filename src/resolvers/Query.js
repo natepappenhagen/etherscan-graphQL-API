@@ -4,6 +4,17 @@ const { apiKey } = process.env;
 const weiToEth = string => {
   return parseFloat(string) * (0.000000000000000001).toString();
 };
+// testing a shorter way of wrting all these fetches.
+// address(parent, args, ctx, info) {
+//   const { account } = args;
+//   const { apiEndpoint } = `https://api.etherscan.io/api?module=account&action=balance&address=${account}&tag=latest&apikey=${apiKey}`
+//   return apiConstructor(apiEndpoint)
+// },
+
+// const apiConstructor (apiEndpoint) => {
+//   const apiCall = fetch(`${apiEndpoint}`).then(res => res.json().then(data => data.result));
+//   return apiCall
+// }
 
 const Query = {
   ////////////////////////

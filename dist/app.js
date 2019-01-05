@@ -20,7 +20,7 @@ const server = new _graphqlYoga.GraphQLServer({
 const options = {
   port: PORT,
   endpoint: "/graphql",
-  playground: "/playground"
+  playground: "/graphql"
 };
 
-server.start(options, ({ port }) => console.log(`Server started, onward and upward on port: ${port}. Access the schema API at /playground`));
+server.start(options, ({ port }) => console.log(`Server started, onward and upward on port: ${port}. Access the schema API at /graphql`));
