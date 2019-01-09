@@ -88,20 +88,21 @@ and connect to: `https://z81urwmpq2.execute-api.us-west-2.amazonaws.com/staging/
 
 ### Tokens:
 
--   Get ERC20-Token TotalSupply by ContractAddress 👍
--   Get ERC20-Token Account Balance for TokenContractAddress 👍
+*   Get ERC20-Token TotalSupply by ContractAddress 👍
+*   Get ERC20-Token Account Balance for TokenContractAddress 👍
 
 ### Stats:
 
--   Get Total Supply of Ether (returned in wei; \* 0.000000000000000001 to return ETHER)👍
+*   Get Total Supply of Ether (returned in wei; \* 0.000000000000000001 to return ETHER)👍
 
--   Get ETHER LastPrice Price👍
+*   Get ETHER LastPrice Price👍
 
 ## Sample Query
 
 Get a list of 'Normal' Transactions By Address
-[Optional Parameters] startblock: starting blockNo to retrieve results, endblock: ending blockNo to retrieve results
-(Returns up to a maximum of the last 10000 transactions only)
+* [Optional Parameters] startblock: starting blockNo to retrieve results
+*  endblock: ending blockNo to retrieve results
+*(Returns up to a maximum of the last 10000 transactions only)*
 
 ```
 query {
