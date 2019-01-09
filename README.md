@@ -23,7 +23,7 @@ Once you make it to the graphQL playground and the server is connected you can e
 -   Get Contract ABI for Verified Contract Source Codes👍
 -   Get Contract Source Code for Verified Contract Source Code👍
 
-###Transactions:
+### Transactions:
 
 -   [BETA] Check Contract Execution Status (if there was an error during contract execution) 👍
 -   [BETA] Check Transaction Receipt Status (Only applicable for Post Byzantium fork transactions) 👍
