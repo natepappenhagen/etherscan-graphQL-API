@@ -1,6 +1,6 @@
 # EtherscanQL
 
-## A graphQL wrapper for the popular [Etherscan.io REST API.](https://etherscan.io/apis "Etherscan.io REST API)
+## A graphQL wrapper for the popular [Etherscan.io REST API.](https://etherscan.io/apis "Etherscan.io REST API")
 
 _This implementation uses a single public API key and is limited to 5 req/s_
 
@@ -96,5 +96,19 @@ Once you make it to the graphQL playground and the server is connected you can e
 Get a list of 'Normal' Transactions By Address
 [Optional Parameters] startblock: starting blockNo to retrieve results, endblock: ending blockNo to retrieve results
 (Returns up to a maximum of the last 10000 transactions only)
+
+```
+query {
+  normalTxByAddress(
+    account: "0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a"
+    startblock: "47884"
+    endblock: "915000"
+  ) {
+    blockNumber
+    gas
+    hash
+  }
+}
+```
 
 ![normal TX by address](/normalTXexample.jpg "normal TX by address")
