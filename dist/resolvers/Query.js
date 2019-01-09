@@ -5,58 +5,84 @@ Object.defineProperty(exports, "__esModule", {
 });
 const fetch = require("node-fetch");
 const { apiKey } = process.env;
+// const weiToEth = string =>
+//   parseFloat(string) * (0.000000000000000001).toString();
 
-const weiToEth = string => {
-  return parseFloat(string) * 0.000000000000000001.toString();
+const url = require("url");
+const ApiEndpoint = "https://api.etherscan.io/api";
+
+const apiConstructor = (module, action, params) => {
+  const myURL = new URL(`${ApiEndpoint}?apikey=${apiKey}`);
+
+  myURL.searchParams.append("module", module);
+  myURL.searchParams.append("action", action);
+
+  Object.keys(params).map((key, index) => {
+    myURL.searchParams.append(key, params[key]);
+  });
+  return myURL.href;
 };
-// testing a shorter way of wrting all these fetches.
-// address(parent, args, ctx, info) {
-//   const { account } = args;
-//   const { apiEndpoint } = `https://api.etherscan.io/api?module=account&action=balance&address=${account}&tag=latest&apikey=${apiKey}`
-//   return apiConstructor(apiEndpoint)
-// },
-
-// const apiConstructor (apiEndpoint) => {
-//   const apiCall = fetch(`${apiEndpoint}`).then(res => res.json().then(data => data.result));
-//   return apiCall
-// }
 
 const Query = {
   ////////////////////////
   //      accounts      //
   ////////////////////////
-  address(parent, args, ctx, info) {
-    // amount of ETH for a single address.
-    // responses come back in WEI so we must convert to ETH by a factor of *0.000000000000000001
 
+  address(parent, args, ctx, info) {
+    //https://api.etherscan.io/api?module=account&action=balance&address=0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a&tag=latest&apikey=YourApiKeyToken
+    // amount of ETH for a single address.
     const { account } = args;
-    const apiCall = fetch(`https://api.etherscan.io/api?module=account&action=balance&address=${account}&tag=latest&apikey=${apiKey}`).then(res => res.json().then(data => weiToEth(data.result)));
+
+    const params = {
+      address: account,
+      tag: "latest"
+    };
+
+    const queryString = apiConstructor("account", "balance", params);
+    const apiCall = fetch(queryString).then(res => res.json().then(data => data.result));
 
     return apiCall;
   },
 
   addresses(parent, args, ctx, info) {
+    //https://api.etherscan.io/api?module=account&action=balancemulti&address=0xddbd2b932c763ba5b1b7ae3b362eac3e8d40121a,0x63a9975ba31b0b9626b34300f7f627147df1f526,0x198ef1ec325a96cc354c7266a038be8b5c558f67&tag=latest&apikey=YourApiKeyToken
     const { accounts } = args;
+    const params = {
+      address: accounts,
+      tag: "latest"
+    };
+    const queryString = apiConstructor("account", "balancemulti", params);
 
-    const apiCall = fetch(`https://api.etherscan.io/api?module=account&action=balancemulti&address=${accounts}&tag=latest&apikey=${apiKey}`).then(res => res.json().then(data => data.result));
+    const apiCall = fetch(queryString).then(res => res.json().then(data => data.result));
 
     return apiCall;
   },
 
   normalTxByAddress(parent, args, ctx, info) {
-    let { account, startblock, endblock, order } = args;
+    //`http://api.etherscan.io/api?module=account&action=txlist&address=${account}&startblock=${startblock}&endblock=${endblock}&sort=${order}&apikey=${apiKey}`
+    //[Optional Parameters] startblock: starting blockNo to retrieve results, endblock: ending blockNo to retrieve results
+    // (Returns up to a maximum of the last 10000 transactions only)
+    const { account, startblock, endblock, order } = args;
 
     !startblock ? startblock = "0" : startblock;
     !endblock ? endblock = "999999999" : endblock;
     !order ? order = "asc" : order;
 
-    const apiCall = fetch(`http://api.etherscan.io/api?module=account&action=txlist&address=${account}&startblock=${startblock}&endblock=${endblock}&sort=${order}&apikey=${apiKey}`).then(res => res.json().then(data => data.result));
+    const params = {
+      address: account,
+      startblock: startblock,
+      endblock: endblock,
+      sort: order
+    };
+    const queryString = apiConstructor("account", "txlist", params);
+
+    const apiCall = fetch(queryString).then(res => res.json().then(data => data.result));
 
     return apiCall;
   },
 
   internalTxByAddress(parent, args, ctx, info) {
-    let { account, startblock, endblock, order } = args;
+    const { account, startblock, endblock, order } = args;
 
     !startblock ? startblock = "0" : startblock;
     !endblock ? endblock = "999999999" : endblock;
@@ -248,12 +274,6 @@ const Query = {
     //Returns ERC20-Token Account Balance for TokenContractAddress
     const { contract, address } = args;
     const apiCall = fetch(`https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=${contract}&address=${address}&tag=latest&apikey=${apiKey}`).then(res => res.json().then(data => data.result));
-    return apiCall;
-  },
-  getERC20TokenSupplyByContract(parent, args, ctx, info) {
-    //Returns ERC20-Token TotalSupply by ContractAddress
-    const { address } = args;
-    const apiCall = fetch(`https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${address}&apikey=${apiKey}`).then(res => res.json().then(data => data.result));
     return apiCall;
   },
   ////////////////////////

@@ -11,12 +11,12 @@ const server = new GraphQLServer({
 
 const options = {
   port: PORT,
-  endpoint: "/graphql",
-  playground: "/graphql"
+  endpoint: "/",
+  playground: "/"
 };
 
 server.start(options, ({ port }) =>
   console.log(
-    `Server started, onward and upward on port: ${port}. Access the schema API at /graphql`
+    `Server started, onward and upward on port: ${port}. Access the schema API at /`
   )
 );
