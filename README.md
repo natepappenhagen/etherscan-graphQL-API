@@ -44,46 +44,60 @@ and connect to: `https://z81urwmpq2.execute-api.us-west-2.amazonaws.com/staging/
 ### GETH/Parity proxy:
 
 - eth_blockNumber👍
-- Returns the number of most recent block
 
-* eth_getBlockByNumber👍
-* Returns information about a block by block number.
+_=> Returns the number of most recent block_
 
-* eth_getUncleByBlockNumberAndIndex👍
-* Returns information about a uncle by block number.
+- eth_getBlockByNumber👍
 
-* eth_getBlockTransactionCountByNumber👍
-* Returns the number of transactions in a block from a block matching the given block number
+_=> Returns information about a block by block number._
 
-* eth_getTransactionByHash👍
-* Returns the information about a transaction requested by transaction hash
+- eth_getUncleByBlockNumberAndIndex👍
 
-* eth_getTransactionByBlockNumberAndIndex👍
-* Returns information about a transaction by block number and transaction index position
+_=> Returns information about a uncle by block number._
 
-* eth_getTransactionCount👍
-* Returns the number of transactions sent from an address
+- eth_getBlockTransactionCountByNumber👍
 
-* eth_sendRawTransaction 🛠️
-* Creates new message call transaction or a contract creation for signed transactions
+_=> Returns the number of transactions in a block from a block matching the given block number_
 
-* eth_getTransactionReceipt👍
-* Returns the receipt of a transaction by transaction hash
+- eth_getTransactionByHash👍
 
-* eth_call👍
-* Executes a new message call immediately without creating a transaction on the block chain
+_=> Returns the information about a transaction requested by transaction hash_
 
-* eth_getCode👍
-* Returns code at a given address
+- eth_getTransactionByBlockNumberAndIndex👍
 
-* eth_getStorageAt (\*\*experimental)👍
-* Returns the value from a storage position at a given address.
+_=> Returns information about a transaction by block number and transaction index position_
 
-* eth_gasPrice👍
-* Returns the current price per gas in wei.
+- eth_getTransactionCount👍
 
-* eth_estimateGas🛠️
-* Makes a call or transaction, which won't be added to the blockchain and returns the used gas, which can be used for estimating the used gas
+_=> Returns the number of transactions sent from an address_
+
+- eth_sendRawTransaction 🛠️
+
+_=> Creates new message call transaction or a contract creation for signed transactions_
+
+- eth_getTransactionReceipt👍
+
+_=> Returns the receipt of a transaction by transaction hash_
+
+- eth_call👍
+
+_=> Executes a new message call immediately without creating a transaction on the block chain_
+
+- eth_getCode👍
+
+_=> Returns code at a given address_
+
+- eth_getStorageAt (\*\*experimental)👍
+
+_=> Returns the value from a storage position at a given address._
+
+- eth_gasPrice👍
+
+_=> Returns the current price per gas in wei._
+
+- eth_estimateGas🛠️
+
+_=> Makes a call or transaction, which won't be added to the blockchain and returns the used gas, which can be used for estimating the used gas_
 
 ### Tokens:
 
