@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 const fetch = require("node-fetch");
 const { apiKey } = process.env;
-const url = require("url");
+const URL = require("url").URL;
 const ApiEndpoint = "https://api.etherscan.io/api";
 
 const apiConstructor = (module, action, params) => {
