@@ -20,6 +20,8 @@ type Query {
     endblock: String
     order: String
   ): [InternalTransactionsByAddress]!
+
+  "Get 'Internal Transactions' by Transaction Hash"
   internalTxByHash(hash: String!): [InternalTransactionByHash]!
 
   "Returns a list of 'ERC20 - Token Transfer Events' by Address"
@@ -30,6 +32,7 @@ type Query {
     order: String
   ): [ERC20TokenTransferEventsByAddress]!
 
+  "Get list of Blocks Mined by Address"
   blocksMinedByAddress(account: String!): [BlocksMinedByAddress]!
 
   "Returns a contract ABI code"
@@ -123,6 +126,8 @@ type Query {
   "Returns last price of ether in WEI"
   getEtherLastPrice: EthPrice
 }
+
+# Types
 
 type AccountsBalances {
   account: String!

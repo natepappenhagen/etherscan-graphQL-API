@@ -8,6 +8,11 @@ _This implementation uses a single public API key and is limited to 5 req/s_
 
 Once you make it to the graphQL playground and the server is connected you can explore the self-documenting API to start crafting your queries!
 
+To connect to this endpoint with Apollo Client so you can serve some ethereum information on your front end head over to :
+[https://www.apollographql.com/docs/tutorial/client.html](https://www.apollographql.com/docs/tutorial/client.html "https://www.apollographql.com/docs/tutorial/client.html")
+
+and connect to: `https://z81urwmpq2.execute-api.us-west-2.amazonaws.com/staging/`
+
 ### Accounts:
 
 -   Get Ether Balance for a single Address (returned in wei; \* 0.000000000000000001 to return ETHER) 👍
@@ -23,7 +28,7 @@ Once you make it to the graphQL playground and the server is connected you can e
 -   Get Contract ABI for Verified Contract Source Codes👍
 -   Get Contract Source Code for Verified Contract Source Code👍
 
-###Transactions:
+### Transactions:
 
 -   [BETA] Check Contract Execution Status (if there was an error during contract execution) 👍
 -   [BETA] Check Transaction Receipt Status (Only applicable for Post Byzantium fork transactions) 👍
@@ -94,8 +99,10 @@ Once you make it to the graphQL playground and the server is connected you can e
 ## Sample Query
 
 Get a list of 'Normal' Transactions By Address
-[Optional Parameters] startblock: starting blockNo to retrieve results, endblock: ending blockNo to retrieve results
-(Returns up to a maximum of the last 10000 transactions only)
+
+-   [Optional Parameters] startblock: starting blockNo to retrieve results
+-   endblock: ending blockNo to retrieve results
+    _(Returns up to a maximum of the last 10000 transactions only)_
 
 ```
 query {
