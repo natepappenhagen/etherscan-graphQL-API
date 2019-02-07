@@ -138,13 +138,13 @@ query {
 
 ## Next Steps
 
-* Build a proper front end with React and Apollo Client to consume this API
+### Build a proper front end with React and Apollo Client to consume this API
 
 - I would like to explore more with NextJS to play with server-side-rendering in React.
 
 - I also want to write more plain CSS (no bootstrap/frameworks) with Flexbox and Grid
 
-* Continue expanding the capabilities of graphQL
+### Continue expanding the capabilities of graphQL
 
 - Caching results and creating a database store (looking at you Redis) 
 
