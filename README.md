@@ -43,61 +43,61 @@ and connect to: `https://z81urwmpq2.execute-api.us-west-2.amazonaws.com/staging/
 
 ### GETH/Parity proxy:
 
-- eth_blockNumber👍
+* eth_blockNumber👍
 
-_=> Returns the number of most recent block_
+ _=> Returns the number of most recent block_
 
-- eth_getBlockByNumber👍
+* eth_getBlockByNumber👍
 
-_=> Returns information about a block by block number._
+ _=> Returns information about a block by block number._
 
-- eth_getUncleByBlockNumberAndIndex👍
+* eth_getUncleByBlockNumberAndIndex👍
 
-_=> Returns information about a uncle by block number._
+ _=> Returns information about a uncle by block number._
 
-- eth_getBlockTransactionCountByNumber👍
+* eth_getBlockTransactionCountByNumber👍
 
-_=> Returns the number of transactions in a block from a block matching the given block number_
+ _=> Returns the number of transactions in a block from a block matching the given block number_
 
-- eth_getTransactionByHash👍
+* eth_getTransactionByHash👍
 
-_=> Returns the information about a transaction requested by transaction hash_
+ _=> Returns the information about a transaction requested by transaction hash_
 
-- eth_getTransactionByBlockNumberAndIndex👍
+* eth_getTransactionByBlockNumberAndIndex👍
 
-_=> Returns information about a transaction by block number and transaction index position_
+ _=> Returns information about a transaction by block number and transaction index position_
 
-- eth_getTransactionCount👍
+* eth_getTransactionCount👍
 
-_=> Returns the number of transactions sent from an address_
+ _=> Returns the number of transactions sent from an address_
 
-- eth_sendRawTransaction 🛠️
+* eth_sendRawTransaction 🛠️
 
-_=> Creates new message call transaction or a contract creation for signed transactions_
+ _=> Creates new message call transaction or a contract creation for signed transactions_
 
-- eth_getTransactionReceipt👍
+* eth_getTransactionReceipt👍
 
-_=> Returns the receipt of a transaction by transaction hash_
+ _=> Returns the receipt of a transaction by transaction hash_
 
-- eth_call👍
+* eth_call👍
 
-_=> Executes a new message call immediately without creating a transaction on the block chain_
+ _=> Executes a new message call immediately without creating a transaction on the block chain_
 
-- eth_getCode👍
+* eth_getCode👍
 
-_=> Returns code at a given address_
+ _=> Returns code at a given address_
 
-- eth_getStorageAt (\*\*experimental)👍
+* eth_getStorageAt (\*\*experimental)👍
 
-_=> Returns the value from a storage position at a given address._
+ _=> Returns the value from a storage position at a given address._
 
-- eth_gasPrice👍
+* eth_gasPrice👍
 
-_=> Returns the current price per gas in wei._
+ _=> Returns the current price per gas in wei._
 
-- eth_estimateGas🛠️
+* eth_estimateGas🛠️
 
-_=> Makes a call or transaction, which won't be added to the blockchain and returns the used gas, which can be used for estimating the used gas_
+ _=> Makes a call or transaction, which won't be added to the blockchain and returns the used gas, which can be used for estimating the used gas_
 
 ### Tokens:
 
@@ -133,3 +133,21 @@ query {
 ```
 
 ![normal TX by address](/normalTXexample.jpg "normal TX by address")
+
+
+
+## Next Steps
+
+* Build a proper front end with React and Apollo Client to consume this API
+
+- I would like to explore more with NextJS to play with server-side-rendering in React.
+
+- I also want to write more plain CSS (no bootstrap/frameworks) with Flexbox and Grid
+
+* Continue expanding the capabilities of graphQL
+
+- Caching results and creating a database store (looking at you Redis) 
+
+- Offer support for WebSockets for real-time data and as a way to use pub/sub patterns to possibility reduce the amout of calls on the system.
+
+- Eventually I would like to try and tackle of creating a graphQL API for infura to offer more direct and comprehensive API to interact with the ethereum and IPFS ecosytem.
