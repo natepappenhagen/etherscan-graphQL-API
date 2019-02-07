@@ -151,3 +151,5 @@ query {
 - Offer support for WebSockets for real-time data and as a way to use pub/sub patterns to possibility reduce the amout of calls on the system.
 
 - Eventually I would like to try and tackle of creating a graphQL API for infura to offer more direct and comprehensive API to interact with the ethereum and IPFS ecosytem.
+
+- Add testing coverage
